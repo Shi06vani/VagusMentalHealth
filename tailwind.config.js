@@ -1,4 +1,6 @@
-/** @type {import('tailwindcss').Config} */
+// tailwind.config.js
+import themeValues from './src/theme.js'
+
 export default {
   content: [
     "./index.html",
@@ -11,11 +13,14 @@ export default {
         sm: '1rem',
         lg: '2rem',
         xl: '5rem',
-       '2xl': '6rem',
+        '2xl': '6rem',
       },
     },
-    extend: {},
+    extend: {
+      fontSize: themeValues.fontSizes,
+      colors: themeValues.colors,
+         fontFamily: themeValues.fontFamily,
+    },
   },
   plugins: [],
-}
-
+};
