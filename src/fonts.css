@@ -1,0 +1,79 @@
+/* src/fonts.css */
+
+/* PlayfairDisplay Font */
+@font-face {
+  font-family: "PlayfairDisplay";
+  src: url("/public/fonts/PlayfairDisplay-Bold.ttf");
+  font-weight: 800;
+}
+@font-face {
+  font-family: "PlayfairDisplay";
+  src: url("/public/fonts/PlayfairDisplay-SemiBold.ttf");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "PlayfairDisplay";
+  src: url("/public/fonts/PlayfairDisplay-Medium.ttf");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "PlayfairDisplay";
+  src: url("/public/fonts/PlayfairDisplay-Regular.ttf");
+  font-weight: 400;
+}
+
+/* Popins Font */
+@font-face {
+  font-family: "Poppins";
+  src: url("/public/fonts/Poppins-Bold.ttf");
+  font-weight: 800;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("/public/fonts/Poppins-SemiBold.ttf");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("/public/fonts/Poppins-Medium.ttf");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("/public/fonts/Poppins-Regular.ttf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("/public/fonts/Poppins-Light.ttf");
+  font-weight: 300;
+}
+
+
+
+/* Inter Font */
+@font-face {
+  font-family: "Inter";
+  src: url("/public/fonts/Inter_18pt-Bold.ttf");
+  font-weight: 800;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("/public/fonts/Inter_18pt-SemiBold.ttf");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("/public/fonts/Inter_18pt-Medium.ttf");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("/public/fonts/Inter_18pt-Regular.ttf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("/public/fonts/Inter_18pt-Light.ttf");
+  font-weight: 300;
+}
