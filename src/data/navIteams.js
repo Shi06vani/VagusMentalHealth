@@ -23,5 +23,5 @@ export const navItems = [
     { label: "Therapist", path: "/therapist" },
     { label: "Plans", path: "/plans" },
     { label: "Business", path: "/business" },
-    { label: "The Advice Room", path: "/advice" },
+    { label: "The Advice Room", path: "/advice-room" },
   ];

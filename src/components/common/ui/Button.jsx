@@ -1,11 +1,15 @@
-import React from 'react'
+// components/ui/Button.jsx
+import { cn } from '../../../utils/cn';
 
-const Button = () => {
+const Button = ({ children, className, ...props }) => {
   return (
-    <div>
-      
-    </div>
-  )
-}
+    <button
+      className={cn("bg-[#094C9F] text-white px-6 py-[4px] rounded-md text-sm font-medium", className)}
+      {...props}
+    >
+      {children}
+    </button>
+  );
+};
 
-export default Button
+export default Button;
