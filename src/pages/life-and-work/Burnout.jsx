@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Relationship = () => {
+const Burnout = () => {
   return (
     <div>
       
@@ -8,4 +8,4 @@ const Relationship = () => {
   )
 }
 
-export default Relationship
+export default Burnout

@@ -25,7 +25,7 @@ const Navbar = () => {
 
   return (
     <div className="container mx-auto">
-      <nav className="bg-white font-poppins xl:px-6 py-5  mt-9">
+      <nav className=" font-poppins xl:px-6 py-5  mt-9">
         <div className="flex justify-between items-center">
           {/* Logo */}
           <div className="font-bold text-xl">
@@ -68,12 +68,12 @@ const Navbar = () => {
                     <ChevronDown size={14} />
                   </button>
                   {openDropdown === idx && (
-                    <ul className="absolute left-0 top-full mt-3 pt-4 pb-9 shadow-sm bg-[#FEFEFE] rounded-[30px] border z-10 min-w-[150px] overflow-hidden">
+                    <ul className="absolute left-0 top-full mt-3 pt-4 pb-9 shadow-sm bg-[#FEFEFE] rounded-[30px] border z-10 min-w-[270px] overflow-hidden">
                       {item.submenu.map((sub, subIdx) => (
                         <li key={subIdx}>
                           <Link
                             to={sub.path}
-                            className=" px-2 py-1 font-normal text-sm text-[#3E3E3E] hover:bg-gray-100 flex justify-between"
+                            className=" px-2 py-2 font-normal text-sm text-[#3E3E3E] hover:bg-gray-100 flex justify-between"
                             onClick={() => setOpenDropdown(null)}
                           >
                             {sub.label}

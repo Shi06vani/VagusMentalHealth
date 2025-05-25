@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import therpry1 from "../../../assets/images/therpey1.png";
 import therpry2 from "../../../assets/images/therpey2.png";
 import therpry3 from "../../../assets/images/therpey3.png";
@@ -44,10 +44,16 @@ const TherapyCard = ({ image, title, subtitle }) => {
   return (
     <div className="flex font-poppins flex-row gap-[89px] sm:gap-0 items-center sm:flex-col sm:p-3 rounded-2xl overflow-hidden text-center">
       <div className="rounded-2xl overflow-hidden">
-        <img src={image} alt={title} className="h-full w-14 sm:w-full object-cover" />
+        <img
+          src={image}
+          alt={title}
+          className="h-full w-14 sm:w-full object-cover"
+        />
       </div>
       <div className="">
-        <h3 className="sm:mt-3  xl:mt-4 text-sm lg:text-base font-normal text-[#3E3E3E]">{title}</h3>
+        <h3 className="sm:mt-3  xl:mt-4 text-sm lg:text-base font-normal text-[#3E3E3E]">
+          {title}
+        </h3>
         <p className="text-xs text-[#3E3E3ECC]">{subtitle}</p>
       </div>
     </div>
@@ -55,8 +61,16 @@ const TherapyCard = ({ image, title, subtitle }) => {
 };
 
 const HeroSection = () => {
+  const [bgColor, setBgColor] = useState("");
+  useEffect(() => {
+    document.body.style.backgroundColor = bgColor || ""; 
+    return () => {
+      document.body.style.backgroundColor = "#ffffff"; 
+    };
+  }, [bgColor]);
+
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto pt-8 sm:pt-14  xl:pt-16">
       <h1 className="text-center pb-8 sm:pb-0 text-[30px]  sm:text-[35px]  lg:text-[45px] font-medium xl:text-[64px] text-[#094C9F] xl:font-normal font-playfair">
         The Best Online Platform for Mental Health
       </h1>
@@ -77,10 +91,12 @@ const HeroSection = () => {
 
       <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 xl:grid-cols-5 gap-6 sm:px-20 lg:px-12 xl:px-24">
         {therapyCards.map((card, index) => (
-          <div key={index}> 
+          <div key={index}>
             <div
               className={`rounded-3xl `}
               style={{ backgroundColor: card.bgColor }}
+              onMouseEnter={() => setBgColor(card.bgColor)}
+              onMouseLeave={() => setBgColor("")}
             >
               <TherapyCard
                 image={card.image}
@@ -98,7 +114,7 @@ const HeroSection = () => {
         </p>
       </div>
 
-      <div className=" bg-[#E9F3FF]  py-5 lg:py-10 sm:bg-white  flex  justify-center sm:flex  font-poppins lg:justify-end">
+      <div className="  py-5 lg:py-10   flex  justify-center sm:flex  font-poppins lg:justify-end">
         <button className="flex text-base   xl:text-xl py-1 sm:py-2 px-5 rounded-xl font-semibold items-center gap-2 bg-[#094C9F] text-white   shadow-xl shadow-[#507BB04D] hover:bg-[#003a91] transition duration-300">
           Get Free Consultation
           <img src={video} className="lg:w-7 xl:w-8 " />

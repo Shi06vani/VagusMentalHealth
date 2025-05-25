@@ -5,7 +5,7 @@ import image3 from "../../../assets/images/how-we-wrork3.svg";
 
 const HowWeWork = () => {
   return (
-    <div className="container mx-auto my-20 sm:my-24 font-poppins">
+    <div className="container mx-auto my-20 sm:my-20 font-poppins">
       <div className="flex flex-col justify-center items-center">
         <h1 className="text-[#101828]  text-2xl  sm:text-3xl lg:text-[32px]  xl:text-4xl  pb-5">How We Work</h1>
         <p className="text-[#3E3E3ECC] text-center font-normal text-[15px]">

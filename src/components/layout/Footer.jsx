@@ -44,7 +44,7 @@ const InfoCard = ({ icon, title, description }) => (
 
 const Footer = () => {
   return (
-    <div className="bg-[#E9F3FF] mt-16 sm:mt-24 lg:mt-32 pt-5">
+    <div className="bg-[#E9F3FF] mt-16 sm:mt-24 xl:mt-32 pt-5">
       <div className="container mx-auto">
         <div className=" flex flex-col justify-center xl:justify-between items-center sm:pb-5 sm:items-start sm:flex-row sm:justify-between">
           <div>

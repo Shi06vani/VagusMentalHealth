@@ -1,6 +1,5 @@
 // components/ui/Button.jsx
-import { cn } from '../../../utils/cn';
-
+import cn from "../../../utils/cn"
 const Button = ({ children, className, ...props }) => {
   return (
     <button

@@ -59,7 +59,7 @@ const MentalHealthCheck = () => {
           Check In on Your Mental Health for Free!
         </h1>
       </div>
-      <div className="hidden   sm:flex  justify-center items-center gap-10 lg:gap-10 mx-14 lg:mx-20 xl:mx-32   bg-white">
+      <div className="hidden   sm:flex  justify-center items-center gap-10 lg:gap-10 mx-14 lg:mx-20 xl:mx-32   ">
         {features.map((feature, index) => (
           <FeatureCard key={index} icon={feature.icon} title={feature.title} />
         ))}

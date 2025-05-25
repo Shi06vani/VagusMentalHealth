@@ -5,6 +5,10 @@ import { navbarRoutes } from "./routes/NavbarRoutes";
 import Home from "./pages/Home";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import DashboardLayout from "./dashboard/layout/DashboardLayout";
+import DashboardHome from "./dashboard/pages/DashboardHome";
+import Chat from "./dashboard/pages/Chat";
+import Journal from "./dashboard/pages/Journal";
 function App() {
   return (
     <BrowserRouter>
@@ -14,6 +18,13 @@ function App() {
           {navbarRoutes.map(({ path, Component }) => (
             <Route key={path} path={path} element={<Component />} />
           ))}
+        </Route>
+
+          {/* Dashboard Routes */}
+        <Route path="/dashboard" element={<DashboardLayout />}>
+          <Route index element={<DashboardHome />} />
+          <Route path="chat" element={<Chat />} />
+          <Route path="journal" element={<Journal />} />
         </Route>
       </Routes>
     </BrowserRouter>

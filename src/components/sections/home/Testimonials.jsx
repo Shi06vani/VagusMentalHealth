@@ -2,6 +2,7 @@ import React from "react";
 import TestimonialCard from "../../../components/common/ui/TestimonialCard";
 import testimonialimage from "../../../assets/images/testimonial-image.png";
 import Slider from "react-slick";
+import SliderComponent from "../../common/ui/SliderComponent";
 
 const testimonials = [
   {
@@ -70,55 +71,8 @@ const testimonials = [
 ];
 
 const Testimonials = () => {
-  const settings = {
-    dots: false,
-    infinite: true,
-    speed: 2000,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    arrows: false,
-       responsive: [
-         {
-      breakpoint: 1440,
-      settings: {
-        slidesToShow: 3,
-        slidesToScroll: 1,
-      },
-    },
-    {
-      breakpoint: 1024,
-      settings: {
-        slidesToShow: 3,
-        slidesToScroll: 1,
-      },
-    },
-    {
-      breakpoint: 768,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 1,
-      },
-    },
-    {
-      breakpoint: 480,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-      },
-    },
-    {
-      breakpoint: 360,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-      },
-    },
-  ],
-  };
   return (
-    <div className="font-poppins">
+    <div className="font-poppins bg-white py-10 ">
       <div className="flex text-[#3E3E3E] flex-col justify-center items-center ">
         <h1 className="text-[#3E3E3E] text-center font-normal text-2xl  sm:text-3xl lg:text-[32px] xl:text-4xl">
           Reasons to keep us dedicated{" "}
@@ -127,9 +81,66 @@ const Testimonials = () => {
           Not just reviews, the stories of impact
         </p>
       </div>
-     
-      <div className="my-9 ">
-        <Slider {...settings} className="flex justify-center items-center">
+
+      <div className="">
+        <SliderComponent testimonials={testimonials} />
+      </div>
+    </div>
+  );
+};
+
+export default Testimonials;
+
+// const settings = {
+//     dots: false,
+//     infinite: true,
+//     speed: 2000,
+//     slidesToShow: 3,
+//     slidesToScroll: 1,
+//     autoplay: true,
+//     autoplaySpeed: 3000,
+//     arrows: false,
+//     responsive: [
+//       {
+//         breakpoint: 1440,
+//         settings: {
+//           slidesToShow: 3,
+//           slidesToScroll: 1,
+//         },
+//       },
+//       {
+//         breakpoint: 1024,
+//         settings: {
+//           slidesToShow: 3,
+//           slidesToScroll: 1,
+//         },
+//       },
+//       {
+//         breakpoint: 768,
+//         settings: {
+//           slidesToShow: 2,
+//           slidesToScroll: 1,
+//         },
+//       },
+//       {
+//         breakpoint: 480,
+//         settings: {
+//           slidesToShow: 1,
+//           slidesToScroll: 1,
+//         },
+//       },
+//       {
+//         breakpoint: 360,
+//         settings: {
+//           slidesToShow: 1,
+//           slidesToScroll: 1,
+//         },
+//       },
+//     ],
+//   };
+
+{
+  /* <Slider {...settings} className="flex justify-center items-center">
           
           {testimonials.map((item, index) => (
             <div key={index} className="  px-4 lg:px-3 xl:px-4 py-4">
@@ -142,26 +153,5 @@ const Testimonials = () => {
               />
             </div>
           ))}
-        </Slider>
-      </div>
-    </div>
-  );
-};
-
-export default Testimonials;
-
-
- {/* <div className="py-9">
-        <div className="grid grid-cols-3  justify-center gap-10">
-          {testimonials.map((item, index) => (
-            <TestimonialCard
-              key={index}
-              rating={item.rating}
-              text={item.text}
-              name={item.name}
-              role={item.role}
-              image={item.image}
-            />
-          ))}
-        </div>
-      </div> */}
+        </Slider> */
+}
