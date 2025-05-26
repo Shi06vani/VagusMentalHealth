@@ -1,5 +1,7 @@
 import { useState } from "react";
-import cn  from "../../../utils/cn"; // Ensure you have this utility or handle class names manually
+import cn from "../../../utils/cn"; // Ensure you have this utility or handle class names manually
+import AOSFade from "../../animations/AOSFade";
+import ScrollFadeUp from "../../animations/ScrollFadeUp";
 
 export default function FAQAccordion({
   data = [],
@@ -14,9 +16,12 @@ export default function FAQAccordion({
 
   return (
     <div className="space-y-8 font-poppins">
-      <h2 className="text-2xl sm:text-3xl lg:text-[32px] xl:text-3xl font-medium text-[#3E3E3E] lg:py-6">
-        {title}
-      </h2>
+      <AOSFade direction="right">
+        <h2 className="text-2xl sm:text-3xl lg:text-[32px] xl:text-3xl font-medium text-[#3E3E3E] lg:py-6">
+          {title}
+        </h2>
+      </AOSFade>
+
       {data.map((faq, index) => (
         <div key={index}>
           <button
@@ -24,7 +29,7 @@ export default function FAQAccordion({
             className="w-full text-left bg-[#E9F3FF] py-2.5 px-4 sm:py-3 rounded-md flex justify-between items-center hover:bg-blue-100 transition-all"
           >
             <span className="font-medium text-base lg:text-lg text-[#3E3E3E]">
-              {faq.question}
+              <AOSFade direction="left"> {faq.question}</AOSFade>
             </span>
             <span
               className={cn(

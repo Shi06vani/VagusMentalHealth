@@ -3,6 +3,7 @@ import TestimonialCard from "../../../components/common/ui/TestimonialCard";
 import testimonialimage from "../../../assets/images/testimonial-image.png";
 import Slider from "react-slick";
 import SliderComponent from "../../common/ui/SliderComponent";
+import AOSFade from "../../animations/AOSFade";
 
 const testimonials = [
   {
@@ -73,14 +74,19 @@ const testimonials = [
 const Testimonials = () => {
   return (
     <div className="font-poppins bg-white py-10 ">
-      <div className="flex text-[#3E3E3E] flex-col justify-center items-center ">
-        <h1 className="text-[#3E3E3E] text-center font-normal text-2xl  sm:text-3xl lg:text-[32px] xl:text-4xl">
-          Reasons to keep us dedicated{" "}
-        </h1>
-        <p className="text-[#3E3E3ECC] text-sm sm:text-base pt-1.5 font-normal">
-          Not just reviews, the stories of impact
-        </p>
+      <div className="container mx-auto">
+          <AOSFade direction="right">
+        <div className="flex text-[#3E3E3E] flex-col justify-center items-center ">
+          <h1 className="text-[#3E3E3E] text-center font-normal text-2xl  sm:text-3xl lg:text-[32px] xl:text-4xl">
+            Reasons to keep us dedicated{" "}
+          </h1>
+          <p className="text-[#3E3E3ECC] text-sm sm:text-base pt-1.5 font-normal">
+            Not just reviews, the stories of impact
+          </p>
+        </div>
+      </AOSFade>
       </div>
+    
 
       <div className="">
         <SliderComponent testimonials={testimonials} />

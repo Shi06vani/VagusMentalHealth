@@ -9,7 +9,9 @@ import DashboardLayout from "./dashboard/layout/DashboardLayout";
 import DashboardHome from "./dashboard/pages/DashboardHome";
 import Chat from "./dashboard/pages/Chat";
 import Journal from "./dashboard/pages/Journal";
+import Aos from "aos";
 function App() {
+   Aos.init();
   return (
     <BrowserRouter>
       <Routes>

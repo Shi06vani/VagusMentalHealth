@@ -12,13 +12,13 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import AutoSlider from "../../common/ui/AutoSlider";
-
+import AOSFade from "../../animations/AOSFade";
 const statsImages = [
   state1,
   state2,
   state3,
   state4,
-  state5,
+  state5, 
   state6,
   state7,
   state8,
@@ -28,9 +28,15 @@ const statsImages = [
 const TrustedBy = () => {
   return (
     <div>
-      <p className="text-center text-[#667085] font-normal text-lg pb-7 pt-9">
+      <div className="container mx-auto">
+          <AOSFade direction="right">
+         <p className="text-center text-[#667085] font-normal text-lg pb-7 pt-9">
         Internationally certified specialists from
       </p>
+      </AOSFade>
+      </div>
+    
+     
       <div className="  ">
         <div className="xl:min-h-[120px] w-full">
           <AutoSlider
