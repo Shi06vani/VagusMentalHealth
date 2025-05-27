@@ -55,7 +55,7 @@ const FeatureCard = ({ icon, title }) => {
 const MentalHealthCheck = () => {
   return (
     <div className="container mx-auto py-16 font-poppins">
-      <AOSFade direction="right">
+      <AOSFade  >
         <div className="flex justify-center items-center pb-9">
           <h1 className=" text-2xl  text-center sm:text-3xl lg:text-[32px]  xl:text-4xl font-normal text-[#101828]">
             Check In on Your Mental Health for Free!
@@ -71,7 +71,7 @@ const MentalHealthCheck = () => {
           ))}
         </div>
       </AOSFade>
-      <AOSFade direction="left">
+      <AOSFade  delay={5000} >
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-6 xl:gap-10  justify-center sm:px-10 xl:px-12 sm:pt-20">
           {testCards.map((test, index) => (
             <TestCard

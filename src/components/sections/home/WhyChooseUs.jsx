@@ -69,7 +69,7 @@ const WhyChooseUs = () => {
   return (
     <div className="bg-[#E9F3FF]  my-20 sm:my-28 rounded-b-[55px]  rounded-t-[55px]  xl:rounded-b-[200px] xl:rounded-t-[200px]">
       <div className="container mx-auto">
-        <AOSFade direction="right">
+        <AOSFade delay={1000}>
           <div className="text-center font-poppins py-[70px]">
             <h1 className="text-[#3E3E3E] font-normal text-2xl sm:text-3xl lg:text-[32px]  xl:text-4xl pb-4">
               Why choose Vagus Mind Health?
@@ -85,7 +85,7 @@ const WhyChooseUs = () => {
           </div>
         </AOSFade>
 
-        <AOSFade direction="left">
+        <AOSFade delay={2000}>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 py-10 xl:py-24 container mx-auto">
             <TherapyPlans />
             <FeatureList />

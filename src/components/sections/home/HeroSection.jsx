@@ -72,12 +72,12 @@ const HeroSection = () => {
 
   return (
     <div className="container mx-auto pt-8 sm:pt-14  xl:pt-16">
-      <AOSFade direction="right">
+      <AOSFade>
         <h1 className="text-center pb-8 sm:pb-0 text-[30px]  sm:text-[35px]  lg:text-[45px] font-medium xl:text-[64px] text-[#094C9F] xl:font-normal font-playfair">
           The Best Online Platform for Mental Health
         </h1>
       </AOSFade>
-      <AOSFade direction="left">
+      <AOSFade>
         <div className=" hidden  text-sm text-[#3E3E3ECC] font-normal  sm:flex sm:justify-center lg:justify-evenly py-9">
           <div className="flex gap-2 font-poppins">
             <img src={rightClick} alt="" />
@@ -111,19 +111,22 @@ const HeroSection = () => {
             </div>
           ))}
         </div>
+        <AOSFade delay={1000}>
+          <div className=" flex justify-center font-poppins items-center py-7 sm:py-14">
+            <div data-aos="fade-up">
+              <p className="py-3 px-2 sm:px-16 rounded-lg text-xs sm:text-base  text-[#3E3E3ECC] border border-[#E4E7EC]">
+                Find the therapist who truly understands you
+              </p>
+            </div>
+          </div>
 
-        <div className=" flex justify-center font-poppins items-center py-7 sm:py-14">
-          <p className="py-3 px-2 sm:px-16 rounded-lg text-xs sm:text-base  text-[#3E3E3ECC] border border-[#E4E7EC]">
-            Find the therapist who truly understands you
-          </p>
-        </div>
-
-        <div className="  py-5 lg:py-10   flex  justify-center sm:flex  font-poppins lg:justify-end">
-          <button className="flex text-base   xl:text-xl py-1 sm:py-2 px-5 rounded-xl font-semibold items-center gap-2 bg-[#094C9F] text-white   shadow-xl shadow-[#507BB04D] hover:bg-[#003a91] transition duration-300">
-            Get Free Consultation
-            <img src={video} className="lg:w-7 xl:w-8 " />
-          </button>
-        </div>
+          <div className="  py-5 lg:py-10   flex  justify-center sm:flex  font-poppins lg:justify-end">
+            <button className="flex text-base   xl:text-xl py-1 sm:py-2 px-5 rounded-xl font-semibold items-center gap-2 bg-[#094C9F] text-white   shadow-xl shadow-[#507BB04D] hover:bg-[#003a91] transition duration-300">
+              Get Free Consultation
+              <img src={video} className="lg:w-7 xl:w-8 " />
+            </button>
+          </div>
+        </AOSFade>
       </AOSFade>
     </div>
   );

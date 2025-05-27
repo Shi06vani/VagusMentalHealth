@@ -10,7 +10,15 @@ import DashboardHome from "./dashboard/pages/DashboardHome";
 import Chat from "./dashboard/pages/Chat";
 import Journal from "./dashboard/pages/Journal";
 import Aos from "aos";
+import { useEffect } from "react";
 function App() {
+  useEffect(() => {
+    Aos.init({
+      once: true, 
+      offset: 500 
+    });
+    Aos.refresh(); 
+  }, []);
    Aos.init();
   return (
     <BrowserRouter>

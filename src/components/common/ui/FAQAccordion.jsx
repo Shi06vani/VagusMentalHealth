@@ -16,11 +16,12 @@ export default function FAQAccordion({
 
   return (
     <div className="space-y-8 font-poppins">
-      <AOSFade direction="right">
+      <AOSFade>
         <h2 className="text-2xl sm:text-3xl lg:text-[32px] xl:text-3xl font-medium text-[#3E3E3E] lg:py-6">
           {title}
         </h2>
       </AOSFade>
+      
 
       {data.map((faq, index) => (
         <div key={index}>
@@ -29,7 +30,10 @@ export default function FAQAccordion({
             className="w-full text-left bg-[#E9F3FF] py-2.5 px-4 sm:py-3 rounded-md flex justify-between items-center hover:bg-blue-100 transition-all"
           >
             <span className="font-medium text-base lg:text-lg text-[#3E3E3E]">
-              <AOSFade direction="left"> {faq.question}</AOSFade>
+              <div data-aos="zoom-in">
+                {" "}
+                {faq.question}
+              </div>
             </span>
             <span
               className={cn(
