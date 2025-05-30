@@ -11,6 +11,7 @@ import Chat from "./dashboard/pages/Chat";
 import Journal from "./dashboard/pages/Journal";
 import Aos from "aos";
 import { useEffect } from "react";
+import Login from "./pages/Login";
 function App() {
   useEffect(() => {
     Aos.init({
@@ -20,6 +21,7 @@ function App() {
     Aos.refresh(); 
   }, []);
    Aos.init();
+
   return (
     <BrowserRouter>
       <Routes>
@@ -36,6 +38,7 @@ function App() {
           <Route path="chat" element={<Chat />} />
           <Route path="journal" element={<Journal />} />
         </Route>
+        <Route path="/login" element={<Login/>}/>
       </Routes>
     </BrowserRouter>
   );
