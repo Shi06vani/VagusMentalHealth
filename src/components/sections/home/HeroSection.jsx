@@ -120,11 +120,23 @@ const HeroSection = () => {
             </div>
           </div>
 
-          <div className="  py-5 lg:py-10   flex  justify-center sm:flex  font-poppins lg:justify-end">
+          {/* <div className="  py-5 lg:py-10   flex  justify-center sm:flex  font-poppins lg:justify-end">
             <button className="flex text-base   xl:text-xl py-1 sm:py-2 px-5 rounded-xl font-semibold items-center gap-2 bg-[#094C9F] text-white   shadow-xl shadow-[#507BB04D] hover:bg-[#003a91] transition duration-300">
               Get Free Consultation
               <img src={video} className="lg:w-7 xl:w-8 " />
             </button>
+          </div> */}
+
+          <div className="py-5 lg:py-10 flex justify-center sm:flex font-poppins lg:justify-end">
+            <a
+              href="https://wa.me/919876543210?text=Hi%2C%20I%20would%20like%20to%20get%20a%20free%20consultation."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex text-base xl:text-xl py-1 sm:py-2 px-5 rounded-xl font-semibold items-center gap-2 bg-[#094C9F] text-white shadow-xl shadow-[#507BB04D] hover:bg-[#003a91] transition duration-300"
+            >
+              Get Free Consultation
+              <img src={video} className="lg:w-7 xl:w-8" alt="video icon" />
+            </a>
           </div>
         </AOSFade>
       </AOSFade>

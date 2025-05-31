@@ -20,7 +20,7 @@ import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-const AOSFade = ({ children, duration = 2000, delay = 100, offset = 120 }) => {
+const AOSFade = ({ children, duration = 1000, delay = 100, offset = 120 }) => {
   useEffect(() => {
     AOS.init({
       duration,

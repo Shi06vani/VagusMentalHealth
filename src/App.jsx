@@ -12,33 +12,35 @@ import Journal from "./dashboard/pages/Journal";
 import Aos from "aos";
 import { useEffect } from "react";
 import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 function App() {
   useEffect(() => {
     Aos.init({
-      once: true, 
-      offset: 500 
+      once: true,
+      offset: 500,
     });
-    Aos.refresh(); 
+    Aos.refresh();
   }, []);
-   Aos.init();
+  Aos.init();
 
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<MainLayout />}>
-         <Route index element={<Home />} />
+          <Route index element={<Home />} />
           {navbarRoutes.map(({ path, Component }) => (
             <Route key={path} path={path} element={<Component />} />
           ))}
         </Route>
 
-          {/* Dashboard Routes */}
+        {/* Dashboard Routes */}
         <Route path="/dashboard" element={<DashboardLayout />}>
           <Route index element={<DashboardHome />} />
           <Route path="chat" element={<Chat />} />
           <Route path="journal" element={<Journal />} />
         </Route>
-        <Route path="/login" element={<Login/>}/>
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup/>} />
       </Routes>
     </BrowserRouter>
   );
