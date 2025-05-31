@@ -3,3 +3,42 @@
 @tailwind utilities;
 
 
+/* editor.css */
+
+/* editor.css */
+
+.editor-box {
+  border: 2px solid #94a3b8; /* Tailwind slate-400 */
+  /* padding: 10px; */
+  min-height: 300px;
+  max-height: 400px;
+  overflow-y: auto;
+  border-radius: 0.5rem;
+  background-color: #ffffff;
+}
+
+/* Fix for inner paragraph spacing */
+.editor-box p {
+  margin: 0.5rem 0;
+  line-height: 1.6;
+}
+
+/* Make sure the content fills height */
+.editor-box > div {
+   padding: 1rem;
+    min-height: 300px;
+  max-height: 400px;
+  border-radius: 0.5rem;
+  background-color: #ffffff;
+}
+
+/* Resize inserted images */
+.editor-box img {
+  max-height: 200px;
+  object-fit: contain;
+  display: block;
+  margin: 1rem auto;
+  border-radius: 0.5rem;
+  border: 1px solid black;
+}
+

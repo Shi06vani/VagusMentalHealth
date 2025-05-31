@@ -1,41 +1,66 @@
 import React from "react";
-import { Camera, Link, Bold, Italic, Plus } from "lucide-react";
-import camera from "../../../dashboard/assets/icons/cameraaa.svg";
-import bold from "../../../dashboard/assets/icons/bold-journal.svg";
-import italic from "../../../dashboard/assets/icons/italic-journal.svg";
-import aatachmnet from "../../../dashboard/assets/icons/attachment-journal.svg";
-import add from "../../../dashboard/assets/icons/add.svg";
+import { EditorContent, useEditor } from "@tiptap/react";
+import StarterKit from "@tiptap/starter-kit";
+import Underline from "@tiptap/extension-underline";
+import Image from "@tiptap/extension-image";
+import Toolbar from "./Toolbar";
+import axios from "axios";
 
 const MyJournal = () => {
+  const editor = useEditor({
+    extensions: [StarterKit.configure({
+      bulletList: false,
+      orderedList: false,
+    }), Underline, Image],
+    content: "<p></p>",
+  });
+const userId = "683aa0db091b52f071081c75";
+  const saveJournal = async () => {
+    const html = editor?.getHTML();
+    await axios.post("http://localhost:5000/api/journal/save", {
+      userId,
+      content: html,
+    });
+    alert("Journal saved");
+  };
+
+const uploadImage = async (event) => {
+  const file = event.target.files[0];
+
+  if (!file) return;
+
+  const formData = new FormData();
+  formData.append("file", file);
+  formData.append("upload_preset", "vagus_unsigned_preset"); // Your preset name
+
+  try {
+    const res = await axios.post(
+      "https://api.cloudinary.com/v1_1/dinrgqewt/image/upload",
+      formData
+    );
+
+    const imageUrl = res.data.secure_url;
+
+    editor.chain().focus().setImage({ src: imageUrl }).run();
+    alert("Image uploaded and inserted successfully!");
+  } catch (error) {
+    console.error("Image upload failed:", error);
+    alert("Image upload failed. Please try again.");
+  }
+};
+
+console.log("editor=========",editor?.getHTML())
   return (
-    <div className="bg-[#E9F3FF]  rounded-[30px] ">
-      <div className=" flex  font-poppins items-center justify-center ">
-        <div className="w-full sm:max-w-4xl px-4 sm:px-6 xl:px-0">
-          <h2 className=" text-lg sm:text-xl font-medium text-[#3E3E3E] my-5 sm:my-7 mx-2">
-            My Journal
-          </h2>
-          <div className="bg-white p-4 min-h-[460px] text-sm text-gray-500 bg-opacity-70 rounded-2xl  shadow-md ">
-            Start writing here ..........
-          </div>
-          <div className="flex justify-center my-10 space-x-4">
-            <button className="bg-white p-3 rounded-full shadow-md hover:bg-gray-100">
-              <img src={camera} alt="" className="  w-4 h-4  sm:w-5 sm:h-5 text-gray-600" />
-            </button>
-            <button className="bg-white p-3 rounded-full shadow-md hover:bg-gray-100">
-              <img src={aatachmnet} alt="" className=" w-4 h-4  sm:w-5 sm:h-5 text-gray-600" />
-            </button>
-            <button className="bg-white p-3 rounded-full shadow-md hover:bg-gray-100">
-              <img src={bold} alt="" className=" w-4 h-4  sm:w-5 sm:h-5 text-gray-600" />
-            </button>
-            <button className="bg-white p-3 rounded-full shadow-md hover:bg-gray-100">
-              <img src={italic} alt="" className=" w-4 h-4  sm:w-5 sm:h-5 text-gray-600" />
-            </button>
-            <button className="bg-white p-3 rounded-full shadow-md hover:bg-gray-100">
-              <img src={add} alt="" className=" w-4 h-4  sm:w-5 sm:h-5 text-gray-600" />
-            </button>
-          </div>
-        </div>
-      </div>
+  <div className="p-4">
+      <h2 className="text-xl font-semibold mb-4">My Journal</h2>
+      <EditorContent editor={editor} className="editor-box" />
+      <Toolbar editor={editor} onImageUpload={uploadImage} saveJournal={saveJournal} />
+      {/* <button
+        onClick={saveJournal}
+        className="mt-4 bg-blue-500 text-white px-4 py-2 rounded"
+      >
+        Save Journal
+      </button> */}
     </div>
   );
 };
