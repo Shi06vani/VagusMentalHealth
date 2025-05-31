@@ -15,7 +15,7 @@ const MyJournal = () => {
             My Journal
           </h2>
           <div className="bg-white p-4 min-h-[460px] text-sm text-gray-500 bg-opacity-70 rounded-2xl  shadow-md ">
-            Start writing here
+            Start writing here ..........
           </div>
           <div className="flex justify-center my-10 space-x-4">
             <button className="bg-white p-3 rounded-full shadow-md hover:bg-gray-100">
