@@ -4,6 +4,18 @@ export const navItems = [
     submenu: [
       { label: "Depression", path: "/specific-disorder/depression" },
       { label: "Eating Disorder", path: "/specific-disorder/eating-disorder" },
+      { label: "Hypochondriasis", path: "/specific-disorder/hypochondriasis" },
+      { label: "MoodDisorder", path: "/specific-disorder/mood-disorder" },
+      { label: "Ocd", path: "/specific-disorder/ocd" },
+      { label: "Postpartum", path: "/specific-disorder/postpartum" },
+      {
+        label: "Personality Disorder",
+        path: "/specific-disorder/personality-disorder",
+      },
+      { label: "7Ptd", path: "/specific-disorder/7ptd" },
+      { label: "Phobia", path: "/specific-disorder/phobia" },
+       { label: "Psychosis", path: "/specific-disorder/psychosis" },
+      
     ],
   },
   {

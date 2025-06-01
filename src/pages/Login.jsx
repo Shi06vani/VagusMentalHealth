@@ -179,11 +179,11 @@ const Login = () => {
             Or login with
           </div>
 
-          <div className="flex justify-center space-x-4 sm:space-x-6 pt-10">
+          {/* <div className="flex justify-center space-x-4 sm:space-x-6 pt-10">
             <img src={facebook} alt="Facebook" className="w-7 h-7 sm:w-10 sm:h-10" />
             <img src={google} alt="Google" className="w-7 h-7 sm:w-10 sm:h-10" />
             <img src={x} alt="Twitter" className="w-7 h-7 sm:w-10 sm:h-10" />
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

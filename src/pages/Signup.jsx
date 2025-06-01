@@ -292,12 +292,12 @@ const Signup = () => {
             <hr className="flex-grow  border-[#B5B5B5]" />
           </div>
 
-          <div className="flex justify-center space-x-4 sm:space-x-6 pt-10">
+          {/* <div className="flex justify-center space-x-4 sm:space-x-6 pt-10">
             <img src={facebook} alt="" className=" w-7 h-7  sm:w-10 sm:h-10" />
             <img src={google} alt="" className=" w-7 h-7  sm:w-10 sm:h-10" />
 
             <img src={x} alt="" className=" w-7 h-7  sm:w-10 sm:h-10" />
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

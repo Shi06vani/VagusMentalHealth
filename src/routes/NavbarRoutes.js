@@ -21,6 +21,14 @@ import BoostingProductivity from "../pages/life-and-work/BoostingProductivity";
 import CareerCoaching from "../pages/life-and-work/CareerCoaching";
 import Depression from "../pages/specific-disorder/Depression";
 import EatingDisorder from "../pages/specific-disorder/EatingDisorder";
+import Hypochondriasis from "../pages/specific-disorder/Hypochondriasis";
+import MoodDisorder from "../pages/specific-disorder/MoodDisorder";
+import OCD from "../pages/specific-disorder/OCD";
+import Postpartum from "../pages/specific-disorder/Postpartum";
+import PersonalityDisorder from "../pages/specific-disorder/PersonalityDisorder";
+import PTD from "../pages/specific-disorder/PTD";
+import Phobia from "../pages/specific-disorder/Phobia";
+import Psychosis from "../pages/specific-disorder/Psychosis";
 
 export const navbarRoutes = [
   {
@@ -33,6 +41,48 @@ export const navbarRoutes = [
     path: "/specific-disorder/eating-disorder",
     Component: EatingDisorder,
   },
+  {
+    name: "Specific Disorder",
+    path: "/specific-disorder/hypochondriasis",
+    Component: Hypochondriasis,
+  },
+  {
+    name: "Specific Disorder",
+    path: "/specific-disorder/mood-disorder",
+    Component: MoodDisorder,
+  },
+  {
+    name: "Specific Disorder",
+    path: "/specific-disorder/ocd",
+    Component: OCD,
+  },
+{
+    name: "Specific Disorder",
+    path: "/specific-disorder/postpartum",
+    Component: Postpartum,
+  },
+  {
+    name: "Specific Disorder",
+    path: "/specific-disorder/personality-disorder",
+    Component: PersonalityDisorder,
+  },
+ {
+    name: "Specific Disorder",
+    path: "/specific-disorder/7ptd",
+    Component: PTD,
+  },
+   {
+    name: "Specific Disorder",
+    path: "/specific-disorder/phobia",
+    Component: Phobia,
+  },
+  {
+    name: "Specific Disorder",
+    path: "/specific-disorder/psychosis",
+    Component: Psychosis,
+  },
+  
+
 
   {
     name: "Life and Work",

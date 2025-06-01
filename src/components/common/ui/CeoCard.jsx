@@ -10,7 +10,7 @@ const CeoCard = ({ image, name, title, testimonial }) => {
       />
       <div>
         <h3 className="text-[#3E3E3E] text-lg lg:text-xl font-semibold">{name},{title}</h3>
-        <p className="text-gray-700 text-sm lg:text-base mt-1">{testimonial}</p>
+        <p className="text-gray-700 text-sm lg:text-base mt-2">{testimonial}</p>
       </div>
     </div>
   )
