@@ -68,7 +68,13 @@ const Navbar = () => {
                     <ChevronDown size={14} />
                   </button>
                   {openDropdown === idx && (
-                    <ul className="absolute left-0 top-full mt-3 pt-4 pb-9 shadow-sm bg-[#FEFEFE] rounded-[30px] border z-10 min-w-[270px] overflow-hidden">
+                    <ul 
+                    className="absolute left-0 top-full mt-3 pt-4 pb-4 max-h-60 overflow-y-auto shadow-lg bg-white rounded-[30px] border border-gray-200 z-10 min-w-[270px] custom-scrollbar transition-all duration-200 ease-in-out"
+          
+                    
+                    // className="absolute left-0 top-full mt-3 pt-4 pb-9  h-52 overflow-y-scroll shadow-sm bg-[#FEFEFE] rounded-[30px] border z-10 min-w-[270px] overflow-hidden"
+                    
+                    >
                       {item.submenu.map((sub, subIdx) => (
                         <li key={subIdx}>
                           <Link

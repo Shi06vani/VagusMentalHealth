@@ -48,7 +48,8 @@ import PtdOverview from '../../components/sections/specific-disorder/PtdOverview
 
 
 
-const PTD = () => {const handleClick =()=>{
+const PTD = () => {
+  const handleClick =()=>{
     
   }
 

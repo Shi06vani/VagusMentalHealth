@@ -14,8 +14,16 @@ export const navItems = [
       },
       { label: "7Ptd", path: "/specific-disorder/7ptd" },
       { label: "Phobia", path: "/specific-disorder/phobia" },
-       { label: "Psychosis", path: "/specific-disorder/psychosis" },
-      
+      { label: "Psychosis", path: "/specific-disorder/psychosis" },
+      { label: "PTCD", path: "/specific-disorder/Ptcd" },
+      { label: "Schizophrenia", path: "/specific-disorder/schizophrenia" },
+      { label: "ADHD", path: "/specific-disorder/Adhd" },
+      { label: "Autistic", path: "/specific-disorder/autistic" },
+      { label: "Abuse", path: "/specific-disorder/abuse" },
+      { label: "Addiction", path: "/specific-disorder/addiction" },
+      { label: "Self Regulation", path: "/specific-disorder/self-regulation" },
+            { label: "lgbtq", path: "/specific-disorder/lgbtq" },
+
     ],
   },
   {

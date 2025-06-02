@@ -85,7 +85,7 @@ const WhyChooseUs = () => {
           </div>
         </AOSFade>
 
-        <AOSFade delay={2000}>
+        <AOSFade delay={1000}>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 py-10 xl:py-24 container mx-auto">
             <TherapyPlans />
             <FeatureList />

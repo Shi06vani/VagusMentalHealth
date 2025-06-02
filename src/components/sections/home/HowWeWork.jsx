@@ -20,14 +20,14 @@ const HowWeWork = () => {
       </AOSFade>
 
       <div className=" mt-6  xl:mt-12 flex flex-col justify-center items-center">
-        <div data-aos="zoom-in-up" data-aos-duration="3000">
+        <div data-aos="zoom-in-up" data-aos-duration="1200">
           <img src={image1} alt="" />
         </div>
-        <div data-aos="zoom-in-up" data-aos-duration="3000">
+        <div data-aos="zoom-in-up" data-aos-duration="2200">
           <img src={image2} alt="" />
         </div>
         <div data-aos="zoom-in-up">
-          <img src={image3} alt="" data-aos-duration="5000"/>
+          <img src={image3} alt="" data-aos-duration="1000"/>
         </div>
       </div>
     </div>
