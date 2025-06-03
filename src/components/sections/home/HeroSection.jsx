@@ -72,12 +72,12 @@ const HeroSection = () => {
 
   return (
     <div className="container mx-auto pt-8 sm:pt-14  xl:pt-16">
-      <AOSFade>
+      <AOSFade duration = {1300}>
         <h1 className="text-center pb-8 sm:pb-0 text-[30px]  sm:text-[35px]  lg:text-[45px] font-medium xl:text-[64px] text-[#094C9F] xl:font-normal font-playfair">
           The Best Online Platform for Mental Health
         </h1>
       </AOSFade>
-      <AOSFade>
+      <AOSFade duration = {1300}>
         <div className=" hidden  text-sm text-[#3E3E3ECC] font-normal  sm:flex sm:justify-center lg:justify-evenly py-9">
           <div className="flex gap-2 font-poppins">
             <img src={rightClick} alt="" />
@@ -111,7 +111,7 @@ const HeroSection = () => {
             </div>
           ))}
         </div>
-        <AOSFade delay={1000}>
+        <AOSFade duration = {1300}>
           <div className=" flex justify-center font-poppins items-center py-7 sm:py-14">
             <div data-aos="fade-up">
               <p className="py-3 px-2 sm:px-16 rounded-lg text-xs sm:text-base  text-[#3E3E3ECC] border border-[#E4E7EC]">
