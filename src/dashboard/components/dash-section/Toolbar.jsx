@@ -5,7 +5,7 @@ import bold from "../../../dashboard/assets/icons/bold-journal.svg";
 import italic from "../../../dashboard/assets/icons/italic-journal.svg";
 import aatachmnet from "../../../dashboard/assets/icons/attachment-journal.svg";
 import add from "../../../dashboard/assets/icons/add.svg";
-
+import underline from "../../../assets/icons/underline.svg"
 const Toolbar = ({ editor, onImageUpload, saveJournal }) => {
   if (!editor) return null;
 
@@ -78,7 +78,7 @@ const Toolbar = ({ editor, onImageUpload, saveJournal }) => {
             </button>
             <button className={`p-3 rounded-full shadow-md hover:bg-gray-100 ${editor.isActive("italic") ? "bg-blue-500 text-white" : "bg-white border"}`}
             onClick={() => editor.chain().focus().toggleUnderline().run()} >
-              Underline
+              <img src={underline} alt="underline" />
             </button>
             <button className={`p-3 rounded-full shadow-md hover:bg-gray-100 ${editor.isActive("italic") ? "bg-blue-500 text-white" : "bg-white border"}`}
             onClick={() => editor.chain().focus().toggleItalic().run()} >

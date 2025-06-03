@@ -46,7 +46,18 @@ const Sidebar = () => {
             }`}
             title={label}
           >
-            <img  src={icon} alt="" className="w-7 h-7"/>
+            {/* <img  src={icon} alt="" className="w-7 h-7"/> */}
+            <img
+              src={icon}
+              alt={label}
+              className="w-7 h-7"
+             style={{
+    filter:
+      activePath === path
+        ? "invert(43%) sepia(89%) saturate(3083%) hue-rotate(203deg) brightness(97%) contrast(89%)" // blue-ish active
+        : "invert(90%) sepia(50%) saturate(0%) brightness(45%) contrast(85%)", // darker inactive
+  }}
+            />
           </button>
         ))}
       </div>
@@ -55,3 +66,8 @@ const Sidebar = () => {
 };
 
 export default Sidebar;
+
+// import home from "../../assets/images/proicons_home.png";
+// import chat from "../../assets/images/mynaui_chat.png";
+
+// import book from "../../assets/images/gala_book.png";

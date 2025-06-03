@@ -36,8 +36,6 @@
 //           />
 //         </div>
 
-      
-
 //         <button className="w-full my-8 bg-[#094C9F] text-white py-2 rounded-xl hover:bg-blue-800 transition">
 //           Login
 //         </button>
@@ -76,14 +74,11 @@
 //       </div>
 //     </div>
 //      </div>
-    
+
 //   );
 // };
 
 // export default Login;
-
-
-
 
 import React, { useState } from "react";
 import toast from "react-hot-toast";
@@ -97,8 +92,45 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
+  const [errors, setErrors] = useState({});
+
+  // const handleLogin = async () => {
+  //   setLoading(true);
+
+  //   try {
+  //     const data = await loginUser(email, password);
+  //     console.log("Login success:", data);
+  //     toast.success("Login successful!");
+  //     localStorage.setItem("token", data.token);
+  //     navigate("/");
+  //   } catch (err) {
+  //     toast.error(err || "Login failed");
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
 
   const handleLogin = async () => {
+    const newErrors = {};
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/i;
+
+    if (!email.trim()) {
+      newErrors.email = "Email is required";
+    } else if (!emailRegex.test(email.trim())) {
+      newErrors.email = "Invalid email format";
+    }
+
+    if (!password.trim()) {
+      newErrors.password = "Password is required";
+    }
+
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+      return;
+    }
+
+    // Clear errors before login
+    setErrors({});
     setLoading(true);
 
     try {
@@ -106,7 +138,7 @@ const Login = () => {
       console.log("Login success:", data);
       toast.success("Login successful!");
       localStorage.setItem("token", data.token);
-      navigate("/");
+      navigate("/dashboard");
     } catch (err) {
       toast.error(err || "Login failed");
     } finally {
@@ -122,6 +154,21 @@ const Login = () => {
             <img src={logo} alt="Logo" />
           </div>
 
+          {/* <div className="mb-5">
+            <label className="block text-base sm:text-lg font-medium text-[#3E3E3E]">
+              Email
+            </label>
+            <input
+              type="text"
+              placeholder="Enter Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="mt-1.5 w-full px-4 py-2.5 text-sm sm:text-base border border-[#8C8C8C] rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+
+
+          </div> */}
+
           <div className="mb-5">
             <label className="block text-base sm:text-lg font-medium text-[#3E3E3E]">
               Email
@@ -133,9 +180,12 @@ const Login = () => {
               onChange={(e) => setEmail(e.target.value)}
               className="mt-1.5 w-full px-4 py-2.5 text-sm sm:text-base border border-[#8C8C8C] rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
+            {errors.email && (
+              <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+            )}
           </div>
 
-          <div>
+          {/* <div>
             <label className="block text-base sm:text-lg font-medium text-[#3E3E3E]">Password</label>
             <input
               type="password"
@@ -144,6 +194,22 @@ const Login = () => {
               onChange={(e) => setPassword(e.target.value)}
               className="mt-1.5 w-full px-4 py-2.5 text-sm sm:text-base border border-[#8C8C8C] rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
+          </div> */}
+
+          <div>
+            <label className="block text-base sm:text-lg font-medium text-[#3E3E3E]">
+              Password
+            </label>
+            <input
+              type="password"
+              placeholder="Enter Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="mt-1.5 w-full px-4 py-2.5 text-sm sm:text-base border border-[#8C8C8C] rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+            {errors.password && (
+              <p className="text-red-500 text-sm mt-1">{errors.password}</p>
+            )}
           </div>
 
           <button
@@ -170,7 +236,10 @@ const Login = () => {
             <span className="text-sm font-light text-[#000000]">
               Don’t have an account?{" "}
             </span>
-            <a href="/signup" className="text-[#094C9F] text-base font-semibold">
+            <a
+              href="/signup"
+              className="text-[#094C9F] text-base font-semibold"
+            >
               Sign Up
             </a>
           </div>
@@ -178,12 +247,6 @@ const Login = () => {
           <div className="text-center text-[#0B0C0D] text-sm font-normal pb-3">
             Or login with
           </div>
-
-          {/* <div className="flex justify-center space-x-4 sm:space-x-6 pt-10">
-            <img src={facebook} alt="Facebook" className="w-7 h-7 sm:w-10 sm:h-10" />
-            <img src={google} alt="Google" className="w-7 h-7 sm:w-10 sm:h-10" />
-            <img src={x} alt="Twitter" className="w-7 h-7 sm:w-10 sm:h-10" />
-          </div> */}
         </div>
       </div>
     </div>
