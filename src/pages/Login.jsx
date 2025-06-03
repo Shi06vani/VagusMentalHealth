@@ -83,17 +83,18 @@
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 import { loginUser } from "../services/api/auth";
-import facebook from "../assets/icons/facebook_1.svg";
-import google from "../assets/icons/google.svg";
-import x from "../assets/icons/ri_twitter.svg";
+// import facebook from "../assets/icons/facebook_1.svg";
+// import google from "../assets/icons/google.svg";
+// import x from "../assets/icons/ri_twitter.svg";
 import logo from "../dashboard/assets/icons/logo.svg";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState({});
-
+const navigate = useNavigate();
   // const handleLogin = async () => {
   //   setLoading(true);
 
