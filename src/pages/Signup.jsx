@@ -760,13 +760,6 @@ const Signup = () => {
             </a>
           </div>
 
-          <div className="flex items-center my-8  mx-28">
-            <hr className="flex-grow border-[#B5B5B5] " />
-            <div className="text-center bg-white absolut text-[#0B0C0D] text-sm px-2 font-normal pb-0">
-              Or signup with
-            </div>
-            <hr className="flex-grow  border-[#B5B5B5]" />
-          </div>
         </div>
       </div>
     </div>

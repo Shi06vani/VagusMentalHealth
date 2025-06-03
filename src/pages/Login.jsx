@@ -244,9 +244,7 @@ const Login = () => {
             </a>
           </div>
 
-          <div className="text-center text-[#0B0C0D] text-sm font-normal pb-3">
-            Or login with
-          </div>
+         
         </div>
       </div>
     </div>
