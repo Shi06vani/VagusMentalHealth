@@ -1,0 +1,68 @@
+import React from "react";
+import TherapyInfoSection from "../../common/ui/TherapyInfoSection";
+import FirstTherapySession from "../../common/ui/FirstTherapySession";
+import CeoCard from "../../common/ui/CeoCard";
+import ceo from "../../../assets/images/taruma-ceo.png"
+const PhobiaThrpyOverview = () => {
+  return (
+    <div className="font-[Poppins] px-4  lg:px-6">
+      <TherapyInfoSection
+        introParagraphs={[
+          "A phobia is an intense, irrational fear of a specific object, situation, or activity that goes beyond normal fear responses. Phobias can interfere with daily life, relationships, and overall well-being. Whether it's a fear of heights, enclosed spaces, social situations, or specific animals, phobias can trigger extreme anxiety and avoidance behaviors.",
+          "Our expert therapists use evidence-based treatments like Cognitive Behavioral Therapy (CBT) and Exposure Therapy to help you regain confidence and control.",
+        ]}
+        heading="Why Choose Vagus Mind Health is Best for treatment?"
+        subheading="We are committed to providing high-quality services to people who are looking for the best treatment clinics."
+        features={[
+          {
+            title: "Experienced and Licensed Therapists",
+            description:
+              "Our licensed and experienced therapists use proven techniques to help you navigate depression with confidence.",
+          },
+          {
+            title: "Immediate Appointments (Available Within 24 Hours)",
+            description:
+              "Get matched with a therapist and start your journey within 24 hours—because your mental health shouldn’t wait.",
+          },
+          {
+            title: "Personalized Care Plans",
+            description:
+              "Tailored treatment plans to fit your needs and progress.",
+          },
+        ]}
+      />
+   <div className="py-20">
+        <CeoCard
+          image={ceo}
+          name="Ryan, Lawyer"
+          title="CEO"
+          testimonial="Vagus Mind Health helped me break free. My therapist provided the support and tools I needed to manage my anxiety and feel in control again.."
+        />
+      </div>
+      <FirstTherapySession
+  heading="What to Expect in Your First Session of Therapy?"
+  description="We are committed to providing high-quality services to people who are looking for the best depression treatment clinics."
+  steps={[
+    {
+      title: "Initial Assessment",
+      description:
+        "At the beginning of the session, we engage in an open conversation about your experiences, challenges, and emotions. This allows your therapist to gain insight into your situation and determine the best support for you.",
+    },
+    {
+      title: "Set Personalized Therapy Goals",
+      description:
+        "In the second step of your depression treatment, you will set goals with your therapist.",
+    },
+    {
+      title: "Discuss Your Tailored Care Plan",
+      description:
+        "Your therapist will outline a customized care plan designed to meet your unique needs and recovery goals.",
+    },
+  ]}
+/>
+
+    </div>
+  );
+};
+
+export default PhobiaThrpyOverview;

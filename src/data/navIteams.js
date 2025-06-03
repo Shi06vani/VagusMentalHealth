@@ -4,6 +4,26 @@ export const navItems = [
     submenu: [
       { label: "Depression", path: "/specific-disorder/depression" },
       { label: "Eating Disorder", path: "/specific-disorder/eating-disorder" },
+      { label: "Hypochondriasis", path: "/specific-disorder/hypochondriasis" },
+      { label: "MoodDisorder", path: "/specific-disorder/mood-disorder" },
+      { label: "Ocd", path: "/specific-disorder/ocd" },
+      { label: "Postpartum", path: "/specific-disorder/postpartum" },
+      {
+        label: "Personality Disorder",
+        path: "/specific-disorder/personality-disorder",
+      },
+      { label: "7Ptd", path: "/specific-disorder/7ptd" },
+      { label: "Phobia", path: "/specific-disorder/phobia" },
+      { label: "Psychosis", path: "/specific-disorder/psychosis" },
+      { label: "PTCD", path: "/specific-disorder/Ptcd" },
+      { label: "Schizophrenia", path: "/specific-disorder/schizophrenia" },
+      { label: "ADHD", path: "/specific-disorder/Adhd" },
+      { label: "Autistic", path: "/specific-disorder/autistic" },
+      { label: "Abuse", path: "/specific-disorder/abuse" },
+      { label: "Addiction", path: "/specific-disorder/addiction" },
+      { label: "Self Regulation", path: "/specific-disorder/self-regulation" },
+            { label: "lgbtq", path: "/specific-disorder/lgbtq" },
+
     ],
   },
   {
