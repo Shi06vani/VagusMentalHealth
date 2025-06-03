@@ -5,6 +5,7 @@ import Underline from "@tiptap/extension-underline";
 import Image from "@tiptap/extension-image";
 import Toolbar from "./Toolbar";
 import axios from "axios";
+const API = import.meta.env.VITE_BASE_URL;
 
 const MyJournal = () => {
   const editor = useEditor({
@@ -17,7 +18,7 @@ const MyJournal = () => {
 const userId = "683aa0db091b52f071081c75";
   const saveJournal = async () => {
     const html = editor?.getHTML();
-    await axios.post("http://localhost:5000/api/journal/save", {
+    await axios.post(`${API}/journal/save`, {
       userId,
       content: html,
     });
