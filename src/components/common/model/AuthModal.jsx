@@ -9,9 +9,9 @@ const AuthModal = ({ onClose, children }) => {
   }, []);
 
   return (
-    <div className="fixed inset-0 z-50 bg-black bg-opacity-60 flex justify-center items-center py-2 px-2 sm:px-20">
+    <div className="fixed inset-0 z-50 bg-black bg-opacity-60 flex justify-center items-center py-2 px-5 sm:px-20 ">
       {/* Modal content wrapper */}
-      <div className="relative bg-white rounded-xl  w-full  max-h-[100%] lg:max-w-3xl sm:p-10 lg:p-14 shadow-lg scrollbar-hide  overflow-y-scroll ">
+      <div className="relative bg-white rounded-xl  w-full  max-h-[100%] lg:max-w-3xl px-3 lg:px-10  xl:px-5  shadow-lg scrollbar-hide  overflow-y-scroll ">
         {/* Close Button */}
         <button
           onClick={onClose}

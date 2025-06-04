@@ -6,6 +6,7 @@ import { navItems } from "../../data/navIteams";
 import menu from "../../assets/icons/menu.svg";
 import arrow from "../../assets/icons/right-half-arroe.svg";
 import { useEffect } from "react";
+import { is } from "date-fns/locale";
 const Navbar = ({ openLogin, openSignup }) => {
   const [openDropdown, setOpenDropdown] = useState(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -45,11 +46,20 @@ const Navbar = ({ openLogin, openSignup }) => {
 
           {/* Hamburger Menu (Mobile) */}
           <div className="lg:hidden  flex gap-4">
-            <div className="" onClick={openLogin}>
-              <Link className="text-[#3E3E3E] font-poppins text-base font-medium">
-                Login
-              </Link>
-            </div>
+            {isLogin ? (
+              <div className="" onClick={openSignup}>
+                <Link className="text-[#3E3E3E] font-poppins text-base font-medium">
+                  Signup
+                </Link>
+              </div>
+            ) : (
+              <div className="" onClick={openLogin}>
+                <Link className="text-[#3E3E3E] font-poppins text-base font-medium">
+                  Login
+                </Link>
+              </div>
+            )}
+
             <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
               {isMobileMenuOpen ? (
                 <X size={24} />
@@ -195,15 +205,28 @@ const Navbar = ({ openLogin, openSignup }) => {
                   )}
                 </li>
               ))}
-              <li>
-                <Link
-                  to="/login"
-                  className="text-sm font-normal text-gray-700"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Login
-                </Link>
-              </li>
+
+              {isLogin ? (
+                <li onClick={openSignup}>
+                  <Link
+                    to=""
+                    className="text-sm font-normal text-gray-700"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    SignUp
+                  </Link>
+                </li>
+              ) : (
+                <li onClick={openLogin}>
+                  <Link
+                    to=""
+                    className="text-sm font-normal text-gray-700"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Login
+                  </Link>
+                </li>
+              )}
             </ul>
           </>
         )}

@@ -548,13 +548,13 @@ const Signup = () => {
 
   return (
     <div className="container mx-auto  ">
-      <div className=" my-10 w-full">
-        <div className="flex justify-center items-center mb-10 sm:mb-7 ">
-          <img src={logo} alt="" />
+      <div className=" my-14  w-full">
+        <div className="flex justify-center items-center mb-10 sm:mb-10 ">
+          <img src={logo} alt="loho" />
         </div>
         <form onSubmit={handleSubmit}>
           <div className="space-y-5 ">
-            <div className="flex gap-3">
+            <div className="flex-col sm:flex-row gap-5 space-y-5 sm:gap-3">
               {/* Name */}
               <div className="w-full">
                 <RenderLabel text="Name" />
@@ -592,7 +592,7 @@ const Signup = () => {
               </div>
             </div>
 
-            <div className="flex gap-3">
+            <div className="flex-col sm:flex-row gap-5 space-y-5 sm:gap-3">
               {/* Password */}
               <div className="w-full">
                 <RenderLabel text="Password" />
@@ -632,7 +632,7 @@ const Signup = () => {
               </div>
             </div>
 
-            <div className="flex gap-3">
+            <div className="flex-col sm:flex-row gap-5 space-y-5 sm:gap-3">
               {/* State */}
               <div className="w-full">
                 <RenderLabel text="State" />
@@ -668,7 +668,7 @@ const Signup = () => {
               </div>
             </div>
 
-            <div className="flex gap-3">
+            <div className="flex-col sm:flex-row gap-5 space-y-5 sm:gap-3">
               {/* Gender */}
               <div className="w-full">
                 <RenderLabel text="Gender" />

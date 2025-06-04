@@ -111,7 +111,7 @@ const HeroSection = () => {
             </div>
           ))}
         </div>
-        <AOSFade duration = {1300}>
+        <AOSFade duration = {1400}>
           <div className=" flex justify-center font-poppins items-center py-7 sm:py-14">
             <div data-aos="fade-up">
               <p className="py-3 px-2 sm:px-16 rounded-lg text-xs sm:text-base  text-[#3E3E3ECC] border border-[#E4E7EC]">
