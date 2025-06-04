@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { use, useState } from "react";
 import { Link } from "react-router-dom";
 import { ChevronDown, Menu, X } from "lucide-react";
 import logo from "../../assets/logo/logo.svg";
@@ -6,9 +6,11 @@ import { navItems } from "../../data/navIteams";
 import menu from "../../assets/icons/menu.svg";
 import arrow from "../../assets/icons/right-half-arroe.svg";
 import { useEffect } from "react";
-const Navbar = () => {
+const Navbar = ({ openLogin, openSignup }) => {
   const [openDropdown, setOpenDropdown] = useState(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const [isLogin, setIsLogin] = useState(false);
 
   useEffect(() => {
     if (isMobileMenuOpen) {
@@ -23,6 +25,13 @@ const Navbar = () => {
     };
   }, [isMobileMenuOpen]);
 
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      setIsLogin(true);
+    }
+  }, []);
+
   return (
     <div className="container mx-auto">
       <nav className=" font-poppins xl:px-6 py-5  mt-9">
@@ -36,11 +45,8 @@ const Navbar = () => {
 
           {/* Hamburger Menu (Mobile) */}
           <div className="lg:hidden  flex gap-4">
-            <div className="">
-              <Link
-                to="/login"
-                className="text-[#3E3E3E] font-poppins text-base font-medium"
-              >
+            <div className="" onClick={openLogin}>
+              <Link className="text-[#3E3E3E] font-poppins text-base font-medium">
                 Login
               </Link>
             </div>
@@ -68,12 +74,10 @@ const Navbar = () => {
                     <ChevronDown size={14} />
                   </button>
                   {openDropdown === idx && (
-                    <ul 
-                    className="absolute left-0 top-full mt-3 pt-4 pb-4 max-h-60 overflow-y-auto shadow-lg bg-white rounded-[30px] border border-gray-200 z-10 min-w-[270px] custom-scrollbar transition-all duration-200 ease-in-out"
-          
-                    
-                    // className="absolute left-0 top-full mt-3 pt-4 pb-9  h-52 overflow-y-scroll shadow-sm bg-[#FEFEFE] rounded-[30px] border z-10 min-w-[270px] overflow-hidden"
-                    
+                    <ul
+                      className="absolute left-0 top-full mt-3 pt-4 pb-4 max-h-60 overflow-y-auto shadow-lg bg-white rounded-[30px] border border-gray-200 z-10 min-w-[270px] custom-scrollbar transition-all duration-200 ease-in-out"
+
+                      // className="absolute left-0 top-full mt-3 pt-4 pb-9  h-52 overflow-y-scroll shadow-sm bg-[#FEFEFE] rounded-[30px] border z-10 min-w-[270px] overflow-hidden"
                     >
                       {item.submenu.map((sub, subIdx) => (
                         <li key={subIdx}>
@@ -102,14 +106,25 @@ const Navbar = () => {
               )
             )}
           </ul>
-          <li className="hidden lg:flex">
-            <Link
-              to="/login"
-              className="text-sm  xl:text-[15px] font-normal text-[#3E3E3E]  list-none"
-            >
-              Login
-            </Link>
-          </li>
+          {isLogin ? (
+            <li className="hidden lg:flex" onClick={openSignup}>
+              <Link
+                // to=""
+                className="text-sm  xl:text-[15px] font-normal text-[#3E3E3E]  list-none"
+              >
+                Signup
+              </Link>
+            </li>
+          ) : (
+            <li className="hidden lg:flex" onClick={openLogin}>
+              <Link
+                // to=""
+                className="text-sm  xl:text-[15px] font-normal text-[#3E3E3E]  list-none"
+              >
+                Login
+              </Link>
+            </li>
+          )}
         </div>
 
         {/* Mobile Menu */}

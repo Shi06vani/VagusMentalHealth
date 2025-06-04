@@ -94,7 +94,7 @@ const Login = () => {
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState({});
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   // const handleLogin = async () => {
   //   setLoading(true);
@@ -150,28 +150,14 @@ const Login = () => {
 
   return (
     <div className="container mx-auto my-10">
-      <div className="flex items-center font-poppins justify-center px-4">
-        <div className="w-full max-w-3xl bg-white p-5 sm:p-20 lg:p-24 rounded-md shadow-md">
-          <div className="flex justify-center items-center mb-10 sm:mb-6">
+      <div className="flex flex-col items-center font-poppins justify-center">
+        
+
+         <div className="flex justify-center items-center mb-10 sm:mb-6">
             <img src={logo} alt="Logo" />
           </div>
 
-          {/* <div className="mb-5">
-            <label className="block text-base sm:text-lg font-medium text-[#3E3E3E]">
-              Email
-            </label>
-            <input
-              type="text"
-              placeholder="Enter Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="mt-1.5 w-full px-4 py-2.5 text-sm sm:text-base border border-[#8C8C8C] rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-
-
-          </div> */}
-
-          <div className="mb-5">
+          <div className="mb-5 w-full"   >
             <label className="block text-base sm:text-lg font-medium text-[#3E3E3E]">
               Email
             </label>
@@ -187,18 +173,7 @@ const Login = () => {
             )}
           </div>
 
-          {/* <div>
-            <label className="block text-base sm:text-lg font-medium text-[#3E3E3E]">Password</label>
-            <input
-              type="password"
-              placeholder="Enter Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="mt-1.5 w-full px-4 py-2.5 text-sm sm:text-base border border-[#8C8C8C] rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-          </div> */}
-
-          <div>
+          <div className="w-full">
             <label className="block text-base sm:text-lg font-medium text-[#3E3E3E]">
               Password
             </label>
@@ -223,10 +198,11 @@ const Login = () => {
           </button>
 
           <div className="flex items-center my-8">
-            <hr className="flex-grow border-gray-300" />
-            <span className="mx-2 text-sm text-gray-500">or</span>
-            <hr className="flex-grow border-gray-300" />
-          </div>
+          <hr className="flex-grow border-gray-300" />
+          <span className="mx-2 text-sm text-gray-500">or</span>
+          <hr className="flex-grow border-gray-300" />
+        </div>
+
 
           <div className="text-center mb-4">
             <a href="#" className="text-[#094C9F] text-base font-semibold">
@@ -239,15 +215,12 @@ const Login = () => {
               Don’t have an account?{" "}
             </span>
             <a
-              href="/signup"
+              href=""
               className="text-[#094C9F] text-base font-semibold"
             >
               Sign Up
             </a>
           </div>
-
-         
-        </div>
       </div>
     </div>
   );
