@@ -11,9 +11,10 @@ const Help = () => {
       buttonText="Chat on Whatsapp"
       buttonIcon={arrow_right}
       backgroundImage={needhelp}
-      onButtonClick={() => {
-        window.open("https://wa.me/your-number", "_blank");
-      }}
+     onButtonClick={() => {
+  window.open("https://wa.me/91954857638", "_blank");
+}}
+    
     />
   );
 };

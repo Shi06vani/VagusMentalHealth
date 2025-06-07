@@ -1,6 +1,7 @@
 import React from "react";
 import SliderComponent from "../../common/ui/SliderComponent";
 import testimonialimage from "../../../assets/images/testimonial-image.png";
+import ScrollFadeUp from "../../animations/ScrollFadeUp";
 
 
 const testimonials = [
@@ -80,7 +81,10 @@ const RapistTestimonials = () => {
           Not just reviews, the stories of impact
         </p>
       </div>
-      <SliderComponent testimonials={testimonials} />
+      <ScrollFadeUp>
+              <SliderComponent testimonials={testimonials} />
+
+      </ScrollFadeUp>
     </div>
   );
 };

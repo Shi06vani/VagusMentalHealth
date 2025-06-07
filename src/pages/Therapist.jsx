@@ -18,6 +18,7 @@ import FAQAccordion from "../components/common/ui/FAQAccordion";
 import downArrow from "../assets/icons/downarrow.svg";
 import { filters } from "../data/faqs";
 import RapistMentalHealthCheck from "../components/sections/therapist/RapistMentalHealthCheck";
+import ScrollFadeUp from "../components/animations/ScrollFadeUp";
 
 // const filters = [
 //   {
@@ -111,47 +112,65 @@ const Therapist = () => {
 
   return (
     <div>
-      <div className="relative">
-        <Banner
-          backgroundImage={rapistbg}
-          heading="Find the Right Therapist for You"
-          description="We match you with a therapist who understands your needs, so you feel supported from day one."
-        ></Banner>
-        <div className="flex justify-center items-center">
-          <div className="absolute  -sm:bottom-4 sm:right-7">
-            <FreeConsultationButton onClick={handleClick} />
+      <ScrollFadeUp>
+        <div className="relative">
+          <Banner
+            backgroundImage={rapistbg}
+            heading="Find the Right Therapist for You"
+            description="We match you with a therapist who understands your needs, so you feel supported from day one."
+          ></Banner>
+          <div className="flex justify-center items-center">
+            <div className="absolute  -sm:bottom-4 sm:right-7">
+              <FreeConsultationButton onClick={handleClick} />
+            </div>
           </div>
         </div>
-      </div>
+      </ScrollFadeUp>
+      <ScrollFadeUp>
+        <div className=" my-20 sm:my-28">
+          <div className="flex justify-center items-center flex-wrap gap-3 mb-10 mx-4 sm:mx-2 ">
+            {filters.map((filter) => (
+              <FilterButton
+                key={filter.label}
+                icon={filter.icon}
+                label={filter.label}
+                options={filter.options}
+                onSelect={(option) => handleSelect(filter.label, option)}
+              />
+            ))}
+          </div>
 
-      <div className=" my-20 sm:my-28">
-        <div className="flex justify-center items-center flex-wrap gap-3 mb-10 mx-4 sm:mx-2 ">
-          {filters.map((filter) => (
-            <FilterButton
-              key={filter.label}
-              icon={filter.icon}
-              label={filter.label}
-              options={filter.options}
-              onSelect={(option) => handleSelect(filter.label, option)}
-            />
-          ))}
+          <div className="w-full flex justify-center items-center ">
+            <SearchableInput placeholder="Search" className="" />
+          </div>
         </div>
+      </ScrollFadeUp>
 
-        <div className="w-full flex justify-center items-center ">
-          <SearchableInput placeholder="Search" className="" />
-        </div>
-      </div>
       <div className="container mx-auto">
-        <ChooseYourSecialist />
+        <ScrollFadeUp>
+          <ChooseYourSecialist />
+        </ScrollFadeUp>
       </div>
-      <RapistTestimonials />
-      <RapistTrustedBy />
-      <div className="container mx-aut">
-        <div className="sm:mx-20 py-10  my-10 sm:my-16 lg:py-16 lg:my-16  ">
-          <FAQAccordion data={faqs} icon={downArrow} />
+      <ScrollFadeUp>
+        {" "}
+        <RapistTestimonials />
+      </ScrollFadeUp>
+
+      <ScrollFadeUp>
+        {" "}
+        <RapistTrustedBy />
+      </ScrollFadeUp>
+
+      <ScrollFadeUp>
+        <div className="container mx-aut">
+          <div className="sm:mx-20 py-10  my-10 sm:my-16 lg:py-16 lg:my-16  ">
+            <FAQAccordion data={faqs} icon={downArrow} />
+          </div>
         </div>
-      </div>
-      <RapistMentalHealthCheck />
+      </ScrollFadeUp>
+      <ScrollFadeUp>
+        <RapistMentalHealthCheck />
+      </ScrollFadeUp>
     </div>
   );
 };

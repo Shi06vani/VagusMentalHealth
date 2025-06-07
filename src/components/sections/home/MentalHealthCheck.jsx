@@ -46,7 +46,7 @@ export const testCards = [
 
 const FeatureCard = ({ icon, title }) => {
   return (
-    <div className="flex items-start  gap-3 xl:px-10 max-w-xs">
+    <div className="flex items-start  gap-3 max-w-xs xl:max-w-[300px]">
       <img src={icon} alt="" />
       <p className="text-[#101828] text-sm font-normal">{title}</p>
     </div>
@@ -54,14 +54,14 @@ const FeatureCard = ({ icon, title }) => {
 };
 const MentalHealthCheck = () => {
   return (
-    <div className="container mx-auto py-16 font-poppins">
+    <div className="container mx-auto my-24 font-poppins">
       <AOSFade  >
         <div className="flex justify-center items-center pb-9">
           <h1 className=" text-2xl  text-center sm:text-3xl lg:text-[32px]  xl:text-4xl font-normal text-[#101828]">
             Check In on Your Mental Health for Free!
           </h1>
         </div>
-        <div className="hidden   sm:flex  justify-center items-center gap-10 lg:gap-10 mx-14 lg:mx-20 xl:mx-32   ">
+        <div className="hidden   sm:flex  justify-center items-center gap-6 lg:gap-6 xl:gap-16 mx-14 lg:mx-20 xl:mx-0  ">
           {features.map((feature, index) => (
             <FeatureCard
               key={index}

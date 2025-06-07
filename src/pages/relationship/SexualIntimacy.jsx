@@ -14,6 +14,7 @@ import parentalcouncelling from "../../assets/images/parental-councelling.png";
 import IssueList from "../../components/common/ui/IssueList";
 import FAQAccordion from "../../components/common/ui/FAQAccordion";
 import ParentallTherapyOverview from "../../components/sections/relation/ParentallTherapyOverview";
+import ScrollFadeUp from "../../components/animations/ScrollFadeUp";
 
 const issuesData = [
   {
@@ -52,42 +53,56 @@ const SexualIntimacy = () => {
 
   return (
     <div>
-      <div className=" mt-5">
-        <CommonBanner
-          title="Parental Counselling"
-          description="Sexual well-being is a vital part of overall health, yet many individuals face challenges such as communication barriers...  read more"
-          image={parentalcouncelling}
-          linkText="Take Test"
-          linkHref="/take-test"
-        />
-        <div className="flex justify-center sm:justify-end items-center my-7 sm:my-11 px-4">
-          <FreeConsultationButton onClick={handleClick} />
-        </div>
-      </div>
-      <div>
-        <IssueList issues={issuesData} />
-      </div>
-      <div className="container mx-auto my-10 xl:my-32">
-        <ParentallTherapyOverview />
-      </div>
-      <div className="container mx-auto">
-        <div className="sm:mx-20">
-          <FAQAccordion data={PartentalFAQs} icon={downArrow} />
-        </div>
-      </div>
-      <div>
-        <HelpBanner
-          title="Need Help Choosing?"
-          description="Connect with our team and they’ll guide you to the right therapist and support your journey."
-          buttonText="Chat on Whatsapp"
-          buttonIcon={arrow_right}
-          backgroundImage={needhelp}
-          onButtonClick={() => {
-            window.open("https://wa.me/your-number", "_blank");
-          }}
-        />
+  <ScrollFadeUp>
+    <div className="mt-5">
+      <CommonBanner
+        title="Parental Counselling"
+        description="Sexual well-being is a vital part of overall health, yet many individuals face challenges such as communication barriers...  read more"
+        image={parentalcouncelling}
+        linkText="Take Test"
+        linkHref="/take-test"
+      />
+      <div className="flex justify-center sm:justify-end items-center my-7 sm:my-11 px-4">
+        <FreeConsultationButton onClick={handleClick} />
       </div>
     </div>
+  </ScrollFadeUp>
+
+  <ScrollFadeUp>
+    <div>
+      <IssueList issues={issuesData} />
+    </div>
+  </ScrollFadeUp>
+
+  <ScrollFadeUp>
+    <div className="container mx-auto my-10 xl:my-32">
+      <ParentallTherapyOverview />
+    </div>
+  </ScrollFadeUp>
+
+  <ScrollFadeUp>
+    <div className="container mx-auto">
+      <div className="sm:mx-20">
+        <FAQAccordion data={PartentalFAQs} icon={downArrow} />
+      </div>
+    </div>
+  </ScrollFadeUp>
+
+  <ScrollFadeUp>
+    <div>
+      <HelpBanner
+        title="Need Help Choosing?"
+        description="Connect with our team and they’ll guide you to the right therapist and support your journey."
+        buttonText="Chat on Whatsapp"
+        buttonIcon={arrow_right}
+        backgroundImage={needhelp}
+        onButtonClick={() => {
+          window.open("https://wa.me/91954857638", "_blank");
+        }}
+      />
+    </div>
+  </ScrollFadeUp>
+</div>
   );
 };
 

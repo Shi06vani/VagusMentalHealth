@@ -10,6 +10,7 @@ import icon1 from "../../assets/icons/crying.svg"
 import icon2 from "../../assets/icons/sleep-disorde.svg"
 import icon3 from "../../assets/icons/lossofintrest.svg"
 import PostmartumTherpy from '../../components/sections/specific-disorder/PostmartumTherpy';
+import ScrollFadeUp from '../../components/animations/ScrollFadeUp';
 const postpartumFAQs = [
   {
     question: "How do I know if I have postpartum depression or just baby blues?",
@@ -56,42 +57,56 @@ const Postpartum = () => {
   }
   return (
     <div>
-      <div className=" mt-5">
-        <CommonBanner
-          title="Best Treatment for Postpartum depression  "
-          description="Postpartum depression (PPD) is a serious mental health condition that affects new mothers after childbirth, causing...  read more"
-          image={postmartum}
-          linkText="Take Test"
-          linkHref="/take-test"
-        />
-        <div className="flex justify-center sm:justify-end items-center my-7 sm:my-11 px-4">
-          <FreeConsultationButton onClick={handleClick} />
-        </div>
-      </div>
-      <div>
-        <IssueList issues={issuesData} />
-      </div>
-      <div className="container mx-auto my-10 xl:my-32">
-        <PostmartumTherpy />
-      </div>
-      <div className="container mx-auto">
-        <div className="sm:mx-20">
-          <FAQAccordion data={postpartumFAQs} icon={commonImages.downArrow} />
-        </div>
-      </div>
-      <div>
-        <HelpBanner
-          title="Need Help Choosing?"
-          description="Connect with our team and they’ll guide you to the right therapist and support your journey."
-          buttonText="Chat on Whatsapp"
-          buttonIcon={commonImages.arrow_right}
-          backgroundImage={commonImages.needhelp}
-          onButtonClick={() => {
-            window.open("https://wa.me/your-number", "_blank");
-          }}
-        />
+  <ScrollFadeUp>
+    <div className="mt-5">
+      <CommonBanner
+        title="Best Treatment for Postpartum depression  "
+        description="Postpartum depression (PPD) is a serious mental health condition that affects new mothers after childbirth, causing...  read more"
+        image={postmartum}
+        linkText="Take Test"
+        linkHref="/take-test"
+      />
+      <div className="flex justify-center sm:justify-end items-center my-7 sm:my-11 px-4">
+        <FreeConsultationButton onClick={handleClick} />
       </div>
     </div>
+  </ScrollFadeUp>
+
+  <ScrollFadeUp>
+    <div>
+      <IssueList issues={issuesData} />
+    </div>
+  </ScrollFadeUp>
+
+  <ScrollFadeUp>
+    <div className="container mx-auto my-10 xl:my-32">
+      <PostmartumTherpy />
+    </div>
+  </ScrollFadeUp>
+
+  <ScrollFadeUp>
+    <div className="container mx-auto">
+      <div className="sm:mx-20">
+        <FAQAccordion data={postpartumFAQs} icon={commonImages.downArrow} />
+      </div>
+    </div>
+  </ScrollFadeUp>
+
+  <ScrollFadeUp>
+    <div>
+      <HelpBanner
+        title="Need Help Choosing?"
+        description="Connect with our team and they’ll guide you to the right therapist and support your journey."
+        buttonText="Chat on Whatsapp"
+        buttonIcon={commonImages.arrow_right}
+        backgroundImage={commonImages.needhelp}
+        onButtonClick={() => {
+          window.open("https://wa.me/your-number", "_blank");
+        }}
+      />
+    </div>
+  </ScrollFadeUp>
+</div>
   )
 }
 

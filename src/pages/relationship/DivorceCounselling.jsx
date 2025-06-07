@@ -13,6 +13,7 @@ import HelpBanner from "../../components/common/ui/HelpBanner";
 import arrow_right from "../../assets/icons/arrow-right-Bold.svg";
 import needhelp from "../../assets/images/need help.jpg";
 import FAQAccordion from "../../components/common/ui/FAQAccordion";
+import ScrollFadeUp from "../../components/animations/ScrollFadeUp";
 
 const issuesData = [
   {
@@ -51,44 +52,59 @@ const DivorceCounselling = () => {
   const handleClick = () => {};
 
   return (
-    <div>
-      <div className=" mt-5">
-        <CommonBanner
-          title="Divorce Counselling"
-          description="Divorce is one of life’s most challenging transitions, bringing emotional, practical, and relational struggles. It affects...  read more"
-          image={divorsebg}
-          linkText="Take Test"
-          linkHref="/take-test"
-        />
-        <div className="flex justify-center sm:justify-end items-center my-7 sm:my-11 px-4">
-          <FreeConsultationButton onClick={handleClick} />
-        </div>
-      </div>
-      <div>
-        <IssueList issues={issuesData} />
-      </div>
-      <div className="container mx-auto my-10 xl:my-32">
-        <DivorseTherapyOverview />
-      </div>
-      <div className="container mx-auto">
-        <div className="sm:mx-20">
-          <FAQAccordion data={faqQuestions} icon={downArrow} />
-        </div>
-      </div>
+    
 
-      <div>
-        <HelpBanner
-          title="Need Help Choosing?"
-          description="Connect with our team and they’ll guide you to the right therapist and support your journey."
-          buttonText="Chat on Whatsapp"
-          buttonIcon={arrow_right}
-          backgroundImage={needhelp}
-          onButtonClick={() => {
-            window.open("https://wa.me/your-number", "_blank");
-          }}
-        />
+<div>
+  <ScrollFadeUp>
+    <div className="mt-5">
+      <CommonBanner
+        title="Divorce Counselling"
+        description="Divorce is one of life’s most challenging transitions, bringing emotional, practical, and relational struggles. It affects...  read more"
+        image={divorsebg}
+        linkText="Take Test"
+        linkHref="/take-test"
+      />
+      <div className="flex justify-center sm:justify-end items-center my-7 sm:my-11 px-4">
+        <FreeConsultationButton onClick={handleClick} />
       </div>
     </div>
+  </ScrollFadeUp>
+
+  <ScrollFadeUp>
+    <div>
+      <IssueList issues={issuesData} />
+    </div>
+  </ScrollFadeUp>
+
+  <ScrollFadeUp>
+    <div className="container mx-auto my-10 xl:my-32">
+      <DivorseTherapyOverview />
+    </div>
+  </ScrollFadeUp>
+
+  <ScrollFadeUp>
+    <div className="container mx-auto">
+      <div className="sm:mx-20">
+        <FAQAccordion data={faqQuestions} icon={downArrow} />
+      </div>
+    </div>
+  </ScrollFadeUp>
+
+  <ScrollFadeUp>
+    <div>
+      <HelpBanner
+        title="Need Help Choosing?"
+        description="Connect with our team and they’ll guide you to the right therapist and support your journey."
+        buttonText="Chat on Whatsapp"
+        buttonIcon={arrow_right}
+        backgroundImage={needhelp}
+        onButtonClick={() => {
+          window.open("https://wa.me/91954857638", "_blank");
+        }}
+      />
+    </div>
+  </ScrollFadeUp>
+</div>
   );
 };
 

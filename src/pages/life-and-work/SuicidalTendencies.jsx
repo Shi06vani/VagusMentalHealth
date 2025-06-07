@@ -12,6 +12,7 @@ import FAQAccordion from "../../components/common/ui/FAQAccordion";
 import { commonImages } from "../../common-image-path/images";
 import HelpBanner from "../../components/common/ui/HelpBanner";
 import SuicidalTendenciesTherpay from "../../components/sections/lifeandwork/SuicidalTendenciesTherpay";
+import ScrollFadeUp from "../../components/animations/ScrollFadeUp";
 const SuicidalTendencies = () => {
   const handleClick = () => {};
 
@@ -49,44 +50,59 @@ const SuicidalTendencies = () => {
   ];
 
   return (
-    <div>
-      <div className=" mt-5">
-        <CommonBanner
-          title="Suicidal Tendencies"
-          description="Experiencing suicidal thoughts can feel overwhelming and isolating, but help is available. Suicidal tendencies often stem from...  read more"
-          image={sucidiall}
-          linkText="Take Test"
-          linkHref="/take-test"
-        />
-        <div className="flex justify-center sm:justify-end items-center my-7 sm:my-11 px-4">
-          <FreeConsultationButton onClick={handleClick} />
-        </div>
-      </div>
-      <div>
-        <IssueList issues={issuesData} />
-      </div>
-      <div className="container mx-auto my-10 xl:my-32">
-        <SuicidalTendenciesTherpay />
-      </div>
+    
 
-      <div className="container mx-auto">
-        <div className="sm:mx-20">
-          <FAQAccordion data={faqData} icon={commonImages.downArrow} />
-        </div>
-      </div>
-      <div>
-        <HelpBanner
-          title="Need Help Choosing?"
-          description="Connect with our team and they’ll guide you to the right therapist and support your journey."
-          buttonText="Chat on Whatsapp"
-          buttonIcon={commonImages.arrow_right}
-          backgroundImage={commonImages.needhelp}
-          onButtonClick={() => {
-            window.open("https://wa.me/your-number", "_blank");
-          }}
-        />
+<div>
+  <ScrollFadeUp>
+    <div className="mt-5">
+      <CommonBanner
+        title="Suicidal Tendencies"
+        description="Experiencing suicidal thoughts can feel overwhelming and isolating, but help is available. Suicidal tendencies often stem from...  read more"
+        image={sucidiall}
+        linkText="Take Test"
+        linkHref="/take-test"
+      />
+      <div className="flex justify-center sm:justify-end items-center my-7 sm:my-11 px-4">
+        <FreeConsultationButton onClick={handleClick} />
       </div>
     </div>
+  </ScrollFadeUp>
+
+  <ScrollFadeUp>
+    <div>
+      <IssueList issues={issuesData} />
+    </div>
+  </ScrollFadeUp>
+
+  <ScrollFadeUp>
+    <div className="container mx-auto my-10 xl:my-32">
+      <SuicidalTendenciesTherpay />
+    </div>
+  </ScrollFadeUp>
+
+  <ScrollFadeUp>
+    <div className="container mx-auto">
+      <div className="sm:mx-20">
+        <FAQAccordion data={faqData} icon={commonImages.downArrow} />
+      </div>
+    </div>
+  </ScrollFadeUp>
+
+  <ScrollFadeUp>
+    <div>
+      <HelpBanner
+        title="Need Help Choosing?"
+        description="Connect with our team and they’ll guide you to the right therapist and support your journey."
+        buttonText="Chat on Whatsapp"
+        buttonIcon={commonImages.arrow_right}
+        backgroundImage={commonImages.needhelp}
+        onButtonClick={() => {
+          window.open("https://wa.me/91954857638", "_blank");
+        }}
+      />
+    </div>
+  </ScrollFadeUp>
+</div>
   );
 };
 

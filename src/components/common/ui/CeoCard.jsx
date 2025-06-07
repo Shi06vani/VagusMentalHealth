@@ -1,7 +1,9 @@
 import React from 'react'
+import ScrollFadeUp from '../../animations/ScrollFadeUp'
 
 const CeoCard = ({ image, name, title, testimonial }) => {
   return (
+    <ScrollFadeUp>
     <div className="flex flex-col sm:flex-row justify-center font-poppins text-center sm:text-start gap-6 sm:gap-10 xl:gap-20 items-center sm:iteam-start bg-[#E9F3FF] px-6  sm:px-10 py-7 rounded-2xl ">
       <img
         src={image}
@@ -13,6 +15,7 @@ const CeoCard = ({ image, name, title, testimonial }) => {
         <p className="text-gray-700 text-sm lg:text-base mt-2">{testimonial}</p>
       </div>
     </div>
+    </ScrollFadeUp>
   )
 }
 

@@ -35,7 +35,7 @@ const Navbar = ({ openLogin, openSignup }) => {
 
   return (
     <div className="container mx-auto">
-      <nav className=" font-poppins xl:px-6 py-5  mt-9">
+      <nav className=" font-poppins xl:px-6 py-10   ">
         <div className="flex justify-between items-center">
           {/* Logo */}
           <div className="font-bold text-xl">
@@ -143,7 +143,7 @@ const Navbar = ({ openLogin, openSignup }) => {
           <>
             {/* Black Overlay */}
             <div
-              className="fixed inset-0 bg-black bg-opacity-40 z-40"
+              className="fixed inset-0 bg-black bg-opacity-40 z-40 "
               onClick={() => {
                 setIsMobileMenuOpen(false);
                 setOpenDropdown(null);
@@ -152,7 +152,7 @@ const Navbar = ({ openLogin, openSignup }) => {
 
             {/* Slide-in Menu */}
             <ul
-              className="fixed top-0 left-0 h-full w-[75%] sm:w-[50%] bg-white z-50 rounded-r-[30px] px-4 py-7 space-y-4 transform transition-transform duration-300 ease-in-out"
+              className="fixed top-0 left-0 h-full w-[75%] sm:w-[50%] bg-white z-50 rounded-r-[30px] px-4 py-7 space-y-4 transform transition-transform duration-300 ease-in-out overflow-y-scroll"
               style={{ transform: "translateX(0)" }}
             >
               <div className="font-bold text-xl pb-4">
@@ -175,7 +175,7 @@ const Navbar = ({ openLogin, openSignup }) => {
                         <ChevronDown size={14} />
                       </button>
                       {openDropdown === idx && (
-                        <ul className="pt-4 pb-6 px-4 bg-[#FEFEFE] shadow-md rounded-[30px] border mt-3 space-y-1">
+                        <ul className="pt-4 pb-6 px-4 bg-[#FEFEFE] shadow- rounded-[30px] border mt-3 space-y-5 overflow-y-scroll">
                           {item.submenu.map((sub, subIdx) => (
                             <li key={subIdx}>
                               <Link

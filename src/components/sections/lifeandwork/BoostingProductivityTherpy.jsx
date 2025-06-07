@@ -6,6 +6,7 @@ import TherapyInfoSection from "../../common/ui/TherapyInfoSection";
 const BoostingProductivityTherpy = () => {
   return (
     <div className="font-[Poppins]  px-4 lg:px-6">
+      
       <TherapyInfoSection
         introParagraphs={[
           "Productivity isn’t just about working harder—it’s about working smarter. Managing time effectively, staying motivated, and maintaining mental well-being are key to achieving more without burnout.",

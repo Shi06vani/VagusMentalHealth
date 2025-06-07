@@ -73,7 +73,7 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <div className="font-poppins bg-white py-10 ">
+    <div className="font-poppins bg-white py ">
       <div className="container mx-auto">
           <AOSFade direction="right">
         <div className="flex text-[#3E3E3E] flex-col justify-center items-center ">

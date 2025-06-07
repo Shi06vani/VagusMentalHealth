@@ -29,7 +29,7 @@ export default function FAQAccordion({
             onClick={() => toggle(index)}
             className="w-full text-left bg-[#E9F3FF] py-2.5 px-4 sm:py-3 rounded-md flex justify-between items-center hover:bg-blue-100 transition-all"
           >
-            <span className="font-medium text-base lg:text-lg text-[#3E3E3E]">
+            <span className="font-medium text-base lg:text-[16.4px] text-[#3E3E3E]">
               <div data-aos="zoom-in">
                 {" "}
                 {faq.question}
@@ -45,7 +45,7 @@ export default function FAQAccordion({
             </span>
           </button>
           {openIndex === index && (
-            <div className="bg-[#E9F3FF] px-4 py-3 rounded-b-md text-[#3E3E3E] text-sm lg:text-base">
+            <div className="bg-[#E9F3FF] px-4 py-3 rounded-b-md text-[#3E3E3E] text-sm lg:text-[15px]">
               {faq.answer}
             </div>
           )}

@@ -1,8 +1,5 @@
 import { Component } from "react";
-import Home from "../pages/Home";
-import SpecificDisorder from "../pages/SpecificDisorder";
 import Therapist from "../pages/Therapist";
-import Plans from "../pages/Plans";
 import Business from "../pages/Business";
 import AdviceRoom from "../pages/AdviceRoom";
 import Login from "../pages/Login";
@@ -37,6 +34,7 @@ import Abuse from "../pages/specific-disorder/Abuse";
 import Addiction from "../pages/specific-disorder/Addiction";
 import SelfRegulation from "../pages/specific-disorder/SelfRegulation";
 import LGBTQ from "../pages/specific-disorder/LGBTQ";
+import Pricing from "../pages/Pricing";
 
 export const navbarRoutes = [
   {
@@ -229,9 +227,9 @@ export const navbarRoutes = [
     Component: Therapist,
   },
   {
-    name: "Plans",
-    path: "/plans",
-    Component: Plans,
+    name: "Pricing",
+    path: "/pricing",
+    Component: Pricing,
   },
   {
     name: "Business",

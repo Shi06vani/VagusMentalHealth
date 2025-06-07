@@ -51,42 +51,55 @@ const LandWExistential = () => {
 
   return (
     <div>
-      <div className=" mt-5">
-        <CommonBanner
-          title="Existential Crisis"
-          description="An existential crisis occurs when individuals question the meaning, purpose, or value of life, leading to feelings of...  read more"
-          image={crisiesimg}
-          linkText="Take Test"
-          linkHref="/take-test"
-        />
-        <div className="flex justify-center sm:justify-end items-center my-7 sm:my-11 px-4">
-          <FreeConsultationButton onClick={handleClick} />
+      <ScrollFadeUp>
+        <div className="mt-5">
+          <CommonBanner
+            title="Existential Crisis"
+            description="An existential crisis occurs when individuals question the meaning, purpose, or value of life, leading to feelings of...  read more"
+            image={crisiesimg}
+            linkText="Take Test"
+            linkHref="/take-test"
+          />
+          <div className="flex justify-center sm:justify-end items-center my-7 sm:my-11 px-4">
+            <FreeConsultationButton onClick={handleClick} />
+          </div>
         </div>
-      </div>
-      <div>
-        <IssueList issues={issuesData} />
-      </div>
+      </ScrollFadeUp>
 
-      <div className="container mx-auto my-10 xl:my-32">
-        <ExtenialCrisesTherpyOverview />
-      </div>
-      <div className="container mx-auto">
-        <div className="sm:mx-20">
-          <FAQAccordion data={faqs} icon={downArrow} />
+      <ScrollFadeUp>
+        <div>
+          <IssueList issues={issuesData} />
         </div>
-      </div>
-      <div>
-        <HelpBanner
-          title="Need Help Choosing?"
-          description="Connect with our team and they’ll guide you to the right therapist and support your journey."
-          buttonText="Chat on Whatsapp"
-          buttonIcon={arrow_right}
-          backgroundImage={needhelp}
-          onButtonClick={() => {
-            window.open("https://wa.me/your-number", "_blank");
-          }}
-        />
-      </div>
+      </ScrollFadeUp>
+
+      <ScrollFadeUp>
+        <div className="container mx-auto my-10 xl:my-32">
+          <ExtenialCrisesTherpyOverview />
+        </div>
+      </ScrollFadeUp>
+
+      <ScrollFadeUp>
+        <div className="container mx-auto">
+          <div className="sm:mx-20">
+            <FAQAccordion data={faqs} icon={downArrow} />
+          </div>
+        </div>
+      </ScrollFadeUp>
+
+      <ScrollFadeUp>
+        <div>
+          <HelpBanner
+            title="Need Help Choosing?"
+            description="Connect with our team and they’ll guide you to the right therapist and support your journey."
+            buttonText="Chat on Whatsapp"
+            buttonIcon={arrow_right}
+            backgroundImage={needhelp}
+            onButtonClick={() => {
+              window.open("https://wa.me/91954857638", "_blank");
+            }}
+          />
+        </div>
+      </ScrollFadeUp>
     </div>
   );
 };

@@ -65,7 +65,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
-const ScrollFadeUp = ({ children, delay = 0, duration = 1, yOffset = 30 }) => {
+const ScrollFadeUp = ({ children, delay = 0, duration = 1, yOffset = 55 }) => {
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.15,
@@ -86,6 +86,6 @@ const ScrollFadeUp = ({ children, delay = 0, duration = 1, yOffset = 30 }) => {
       {children}
     </motion.div>
   );
-};
+}; 
 
 export default ScrollFadeUp;

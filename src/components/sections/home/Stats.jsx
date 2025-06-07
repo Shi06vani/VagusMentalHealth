@@ -34,7 +34,7 @@ const Stats = () => {
 
 
   return (
-    <div ref={ref} className="bg-[#E9F3FF] font-poppins  lg:py-40 my-10 sm:my-20">
+    <div ref={ref} className="bg-[#E9F3FF] font-poppins  lg:py-40 my-10 sm:my-28">
       <AOSFade direction="right">
         <div className="grid grid-cols-3 sm:grid-cols-2  gap-5 sm:gap-10   lg:grid-cols-4 items-center p-3 sm:p-6 rounded-md">
         {statsData.map((stat, index) => (

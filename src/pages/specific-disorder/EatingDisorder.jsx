@@ -12,6 +12,7 @@ import icon1 from "../../assets/icons/weightloss.svg";
 import icon2 from "../../assets/icons/skiipingmeals.svg";
 import icon3 from "../../assets/icons/hairloss.svg";
 import discorder from "../../assets/images/Eeatingdiscorder.png";
+import ScrollFadeUp from "../../components/animations/ScrollFadeUp";
 const EatingDisorder = () => {
   const handleClick = () => {};
   const issuesData = [
@@ -53,42 +54,56 @@ const EatingDisorder = () => {
   ];
 
   return (
-    <div>
-      <div className=" mt-5">
-        <CommonBanner
-          title="Best Treatment for Depression That Guides You to Healing"
-          description="Depression is a persistent medical condition that can significantly impact your...  read more"
-          image={discorder}
-          linkText="Take Test"
-          linkHref="/take-test"
-        />
-        <div className="flex justify-center sm:justify-end items-center my-7 sm:my-11 px-4">
-          <FreeConsultationButton onClick={handleClick} />
+   <div>
+      <ScrollFadeUp>
+        <div className="mt-5">
+          <CommonBanner
+            title="Best Treatment for Depression That Guides You to Healing"
+            description="Depression is a persistent medical condition that can significantly impact your...  read more"
+            image={discorder}
+            linkText="Take Test"
+            linkHref="/take-test"
+          />
+          <div className="flex justify-center sm:justify-end items-center my-7 sm:my-11 px-4">
+            <FreeConsultationButton onClick={handleClick} />
+          </div>
         </div>
-      </div>
-      <div>
-        <IssueList issues={issuesData} />
-      </div>
-      <div className="container mx-auto my-10 xl:my-32">
-        <EatingdiscorderTherapy />
-      </div>
-      <div className="container mx-auto">
-        <div className="sm:mx-20">
-          <FAQAccordion data={depressionFAQs} icon={commonImages.downArrow} />
+      </ScrollFadeUp>
+
+      <ScrollFadeUp>
+        <div>
+          <IssueList issues={issuesData} />
         </div>
-      </div>
-      <div>
-        <HelpBanner
-          title="Need Help Choosing?"
-          description="Connect with our team and they’ll guide you to the right therapist and support your journey."
-          buttonText="Chat on Whatsapp"
-          buttonIcon={commonImages.arrow_right}
-          backgroundImage={commonImages.needhelp}
-          onButtonClick={() => {
-            window.open("https://wa.me/your-number", "_blank");
-          }}
-        />
-      </div>
+      </ScrollFadeUp>
+
+      <ScrollFadeUp>
+        <div className="container mx-auto my-10 xl:my-32">
+          <EatingdiscorderTherapy />
+        </div>
+      </ScrollFadeUp>
+
+      <ScrollFadeUp>
+        <div className="container mx-auto">
+          <div className="sm:mx-20">
+            <FAQAccordion data={depressionFAQs} icon={commonImages.downArrow} />
+          </div>
+        </div>
+      </ScrollFadeUp>
+
+      <ScrollFadeUp>
+        <div>
+          <HelpBanner
+            title="Need Help Choosing?"
+            description="Connect with our team and they’ll guide you to the right therapist and support your journey."
+            buttonText="Chat on Whatsapp"
+            buttonIcon={commonImages.arrow_right}
+            backgroundImage={commonImages.needhelp}
+            onButtonClick={() => {
+              window.open("https://wa.me/your-number", "_blank");
+            }}
+          />
+        </div>
+      </ScrollFadeUp>
     </div>
   );
 };

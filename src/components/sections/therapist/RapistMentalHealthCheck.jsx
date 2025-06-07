@@ -1,11 +1,12 @@
-import React from 'react'
+import React from "react";
 import fluent1 from "../../../assets/icons/fluent_people.svg";
 import fluent2 from "../../../assets/icons/fluent-2.svg";
 import material from "../../../assets/icons/material-symbols.svg";
-import icon1 from "../../../assets/icons/mental-disorder.svg"
-import icon2 from "../../../assets/icons/anxiety.svg"
-import icon3 from "../../../assets/icons/sleeping.svg"
-import TestCard from '../../common/ui/TestCard';
+import icon1 from "../../../assets/icons/mental-disorder.svg";
+import icon2 from "../../../assets/icons/anxiety.svg";
+import icon3 from "../../../assets/icons/sleeping.svg";
+import TestCard from "../../common/ui/TestCard";
+import ScrollFadeUp from "../../animations/ScrollFadeUp";
 
 export const features = [
   {
@@ -27,19 +28,19 @@ export const testCards = [
     title: "Stress",
     people: 305,
     time: 5,
-    icon: icon1, 
+    icon: icon1,
   },
   {
     title: "Anxiety",
     people: 45,
     time: 5,
-    icon:icon2, 
+    icon: icon2,
   },
   {
     title: "Sleep Deprived",
     people: 45,
     time: 5,
-    icon:icon3, 
+    icon: icon3,
   },
 ];
 
@@ -54,7 +55,7 @@ const FeatureCard = ({ icon, title }) => {
 
 const RapistMentalHealthCheck = () => {
   return (
-     <div className="container mx-auto py-5 font-poppins">
+    <div className="container mx-auto py-5 font-poppins">
       <div className="flex justify-center items-center pb-9">
         <h1 className=" text-2xl  text-center sm:text-3xl lg:text-[32px]  xl:text-4xl font-normal text-[#101828]">
           Check In on Your Mental Health for Free!
@@ -65,22 +66,23 @@ const RapistMentalHealthCheck = () => {
           <FeatureCard key={index} icon={feature.icon} title={feature.title} />
         ))}
       </div>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-6 xl:gap-10  justify-center sm:px-10 xl:px-12 sm:pt-20">
-        {testCards.map((test, index) => (
-          <TestCard
-            key={index}
-            icon={test.icon}
-            title={test.title}
-            peopleCount={test.peopleCount}
-            time={test.time}
-            onTakeTest={() => console.log(`Take Test: ${test.title}`)}
-            onKnowMore={() => console.log(`Know More: ${test.title}`)}
-          />
-        ))}
-      </div>
+      <ScrollFadeUp>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-6 xl:gap-10  justify-center sm:px-10 xl:px-12 sm:pt-20">
+          {testCards.map((test, index) => (
+            <TestCard
+              key={index}
+              icon={test.icon}
+              title={test.title}
+              peopleCount={test.peopleCount}
+              time={test.time}
+              onTakeTest={() => console.log(`Take Test: ${test.title}`)}
+              onKnowMore={() => console.log(`Know More: ${test.title}`)}
+            />
+          ))}
+        </div>
+      </ScrollFadeUp>
     </div>
-  )
-}
+  );
+};
 
-export default RapistMentalHealthCheck
+export default RapistMentalHealthCheck;
