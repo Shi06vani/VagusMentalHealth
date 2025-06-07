@@ -49,7 +49,7 @@ const TherapyCard = ({ image, title, subtitle }) => {
         <img
           src={image}
           alt={title}
-          className="h-full w-14 sm:w-full object-cover"
+          className="h- w-14 sm:w-full object-cover"
         />
       </div>
       <div className="">
@@ -71,75 +71,65 @@ const HeroSection = () => {
     };
   }, [bgColor]);
 
-
-  const handleClick =()=>{
-    
-  }
+  const handleClick = () => {};
 
   return (
-    <div className="container mx-auto pt-8 sm:pt-14  xl:pt-10">
-      <AOSFade duration={1300}>
-        <h1 className="text-center pb-8 sm:pb-0 text-[30px]  sm:text-[35px]  lg:text-[45px] font-medium xl:text-[64px] text-[#094C9F] xl:font-normal font-playfair">
-          The Best Online Platform for Mental Health
-        </h1>
-      </AOSFade>
-      <AOSFade duration={1300}>
-        <div className=" hidden  text-sm text-[#3E3E3ECC] font-normal  sm:flex sm:justify-center lg:justify-evenly py-9">
-          <div className="flex gap-2 font-poppins">
-            <img src={rightClick} alt="" />
-            <h4>Easy access, anytime and anywhere</h4>
+    <div className=" pt-8 sm:pt-14  xl:pt-10">
+      <div className="container mx-auto">
+        <AOSFade duration={1300}>
+          <h1 className="text-center pb-8 sm:pb-0 text-[30px]  sm:text-[35px]  lg:text-[45px] font-medium xl:text-[64px] text-[#094C9F] xl:font-normal font-playfair">
+            The Best Online Platform for Mental Health
+          </h1>
+        </AOSFade>
+        <AOSFade duration={1300}>
+          <div className=" hidden  text-sm text-[#3E3E3ECC] font-normal  sm:flex sm:justify-center lg:justify-evenly py-9">
+            <div className="flex gap-2 font-poppins">
+              <img src={rightClick} alt="" />
+              <h4>Easy access, anytime and anywhere</h4>
+            </div>
+            <div className="flex justify-center gap-2 font-poppins">
+              <img src={rightClick} alt="" />
+              <h4>Flexible therapy, tailored to you</h4>
+            </div>
+            <div className="flex justify-center items-center gap-2 font-poppins">
+              <img src={rightClick} alt="" />
+              <h4>Guidance from licensed professionals</h4>
+            </div>
           </div>
-          <div className="flex justify-center gap-2 font-poppins">
-            <img src={rightClick} alt="" />
-            <h4>Flexible therapy, tailored to you</h4>
-          </div>
-          <div className="flex justify-center items-center gap-2 font-poppins">
-            <img src={rightClick} alt="" />
-            <h4>Guidance from licensed professionals</h4>
-          </div>
-        </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 xl:grid-cols-5 gap-6 sm:px-20 lg:px-12 xl:px-24 xl:pb-10">
-          {therapyCards.map((card, index) => (
-            <div key={index}>
-              <div
-                className={`rounded-3xl `}
-                style={{ backgroundColor: card.bgColor }}
-                onMouseEnter={() => setBgColor(card.bgColor)}
-                onMouseLeave={() => setBgColor("")}
-              >
-                <TherapyCard
-                  image={card.image}
-                  title={card.title}
-                  subtitle={card.subtitle}
-                />
+          <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 xl:grid-cols-5 gap-6 sm:px-20 lg:px-12 xl:px-24 xl:pb-10">
+            {therapyCards.map((card, index) => (
+              <div key={index}>
+                <div
+                  className={`rounded-3xl `}
+                  style={{ backgroundColor: card.bgColor }}
+                  onMouseEnter={() => setBgColor(card.bgColor)}
+                  onMouseLeave={() => setBgColor("")}
+                >
+                  <TherapyCard
+                    image={card.image}
+                    title={card.title}
+                    subtitle={card.subtitle}
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+          <AOSFade duration={1400}>
+            <div className=" flex justify-center font-poppins items-center py-7 sm:py-7">
+              <div data-aos="fade-up">
+                <p className="py-3 px-2 sm:px-12 rounded-lg text-xs sm:text-base  text-[#3E3E3ECC] border border-[#E4E7EC]">
+                  Find the therapist who truly understands you
+                </p>
               </div>
             </div>
-          ))}
-        </div>
-        <AOSFade duration={1400}>
-          <div className=" flex justify-center font-poppins items-center py-7 sm:py-7">
-            <div data-aos="fade-up">
-              <p className="py-3 px-2 sm:px-14 rounded-lg text-xs sm:text-base  text-[#3E3E3ECC] border border-[#E4E7EC]">
-                Find the therapist who truly understands you
-              </p>
-            </div>
-          </div>
-
-          <div className="py-5 lg:pb-5 flex justify-center sm:flex font-poppins lg:justify-end">
-            {/* <a
-              href="https://wa.me/919876543210?text=Hi%2C%20I%20would%20like%20to%20get%20a%20free%20consultation."
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex text-base xl:text-xl py-1 sm:py-2 px-5 rounded-xl font-semibold items-center gap-2 bg-[#094C9F] text-white shadow-xl shadow-[#507BB04D] hover:bg-[#003a91] transition duration-300"
-            >
-              Get Free Consultation
-              <img src={video} className="lg:w-7 xl:w-8" alt="video icon" />
-            </a> */}
-
-            <FreeConsultationButton onClick={handleClick} />
-          </div>
+          </AOSFade>
         </AOSFade>
+      </div>
+      <AOSFade duration={1500}>
+        <div className=" container-none lg:pb-5 flex justify-center sm:flex font-poppins lg:justify-end py-8  xl:py-5 sm:px-6">
+          <FreeConsultationButton onClick={handleClick} />
+        </div>
       </AOSFade>
     </div>
   );

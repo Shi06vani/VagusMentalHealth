@@ -7,21 +7,18 @@ import { useState } from "react";
 import AuthModal from "../components/common/model/AuthModal";
 
 const MainLayout = () => {
-
-    const [authModalType, setAuthModalType] = useState(null); // 'login' or 'signup'
-      const closeModal = () => setAuthModalType(null);
+  const [authModalType, setAuthModalType] = useState(null); // 'login' or 'signup'
+  const closeModal = () => setAuthModalType(null);
   return (
-    <div >
-      <Navbar 
-      openLogin={() => setAuthModalType("login")}
-        openSignup={() => setAuthModalType("signup")}/>
+    <div>
+      <Navbar openLogin={() => setAuthModalType("login")} />
       <div className="min-h-screen ">
         <Outlet />
         {authModalType && (
-        <AuthModal onClose={closeModal}>
-          {authModalType === "login" ? <Login/> : <Signup/>}
-        </AuthModal>
-      )}
+          <AuthModal onClose={closeModal}>
+            {authModalType === "login" ? <Login openSignup={() => setAuthModalType("signup")} /> : <Signup openLogin={() => setAuthModalType("login")}/>}
+          </AuthModal>
+        )}
       </div>
       <Footer />
     </div>

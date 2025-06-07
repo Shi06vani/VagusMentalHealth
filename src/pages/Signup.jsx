@@ -361,7 +361,7 @@ import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { RenderInput } from "../components/common/ui/RenderInput";
 
-const Signup = () => {
+const Signup = ({openLogin}) => {
   const [formErrors, setFormErrors] = useState({});
 
   const [formData, setFormData] = useState({
@@ -759,9 +759,9 @@ const Signup = () => {
           <span className="text-sm font-light text-[#000000]">
             Already have an account ?{" "}
           </span>
-          <a href="" className="text-[#094C9F] text-base font-semibold ">
+          <button onClick={openLogin} className="text-[#094C9F] text-base font-semibold ">
             Login
-          </a>
+          </button>
         </div>
       </div>
     </div>

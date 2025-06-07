@@ -8,7 +8,7 @@ import { loginUser } from "../services/api/auth";
 // import x from "../assets/icons/ri_twitter.svg";
 import logo from "../dashboard/assets/icons/logo.svg";
 import { useNavigate } from "react-router-dom";
-const Login = () => {
+const Login = ({openSignup}) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
@@ -134,12 +134,12 @@ const Login = () => {
             <span className="text-sm font-light text-[#000000]">
               Don’t have an account?{" "}
             </span>
-            <a
-              href=""
+            <button
+              onClick={openSignup}
               className="text-[#094C9F] text-base font-semibold"
             >
               Sign Up
-            </a>
+            </button>
           </div>
       </div>
     </div>

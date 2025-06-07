@@ -7,7 +7,7 @@ import menu from "../../assets/icons/menu.svg";
 import arrow from "../../assets/icons/right-half-arroe.svg";
 import { useEffect } from "react";
 import { is } from "date-fns/locale";
-const Navbar = ({ openLogin, openSignup }) => {
+const Navbar = ({ openLogin }) => {
   const [openDropdown, setOpenDropdown] = useState(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -33,6 +33,10 @@ const Navbar = ({ openLogin, openSignup }) => {
     }
   }, []);
 
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+  };
+
   return (
     <div className="container mx-auto">
       <nav className=" font-poppins xl:px-6 py-9   ">
@@ -47,10 +51,11 @@ const Navbar = ({ openLogin, openSignup }) => {
           {/* Hamburger Menu (Mobile) */}
           <div className="lg:hidden  flex gap-4">
             {isLogin ? (
-              <div className="" onClick={openSignup}>
-                <Link className="text-[#3E3E3E] font-poppins text-base font-medium">
-                  Signup
-                </Link>
+              <div
+                className="text-[#3E3E3E] font-poppins text-base font-medium"
+                onClick={handleLogout}
+              >
+                Logout
               </div>
             ) : (
               <div className="" onClick={openLogin}>
@@ -117,13 +122,10 @@ const Navbar = ({ openLogin, openSignup }) => {
             )}
           </ul>
           {isLogin ? (
-            <li className="hidden lg:flex" onClick={openSignup}>
-              <Link
-                // to=""
-                className="text-sm  xl:text-[15px] font-normal text-[#3E3E3E]  list-none"
-              >
-                Signup
-              </Link>
+            <li className="hidden lg:flex" onClick={handleLogout}>
+              <div className="text-sm  xl:text-[15px] font-normal text-[#3E3E3E]  list-none">
+                Logout
+              </div>
             </li>
           ) : (
             <li className="hidden lg:flex" onClick={openLogin}>
@@ -207,14 +209,10 @@ const Navbar = ({ openLogin, openSignup }) => {
               ))}
 
               {isLogin ? (
-                <li onClick={openSignup}>
-                  <Link
-                    to=""
-                    className="text-sm font-normal text-gray-700"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    SignUp
-                  </Link>
+                <li onClick={handleLogout}>
+                  <div className="text-sm font-normal text-gray-700">
+                    Logout
+                  </div>
                 </li>
               ) : (
                 <li onClick={openLogin}>

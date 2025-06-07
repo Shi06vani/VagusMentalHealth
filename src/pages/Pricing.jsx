@@ -14,7 +14,7 @@ const plans = [
     subtitle: "Therapists with 2–3 years of hands-on experience.",
     price: 1600,
     icon: emrald,
-    bgColor: "#CEEFECBD",
+    bgColor:"#CEEFEC",
     features: [
       "One-on-one therapy sessions",
       "Personalized care plan",
@@ -54,11 +54,11 @@ const plans = [
 
 const PlanSection = () => (
   <div className="container mx-auto">
-    <h1 className="text-center my-7 sm:my-12 pb-10 text-[30px] sm:text-[35px] lg:text-[45px] font-medium xl:text-[60px] text-[#094C9F] xl:font-normal font-playfair">
+    <h1 className="text-center my-7 sm:my-12 pb-10 text-[30px] sm:text-[35px] lg:text-[40px] font-medium xl:text-[60px] text-[#094C9F] xl:font-normal font-playfair">
       Find the Right Plan for Your Mental Well-being
     </h1>
 
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 xl:gap-16 mx-4 lg:mx-0">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 xl:gap-16 mx-4 lg:mx-0 xl:mx-10">
       {plans.map((plan) => (
         <ScrollFadeUp>
         <PlanCard key={plan.id} {...plan} />
