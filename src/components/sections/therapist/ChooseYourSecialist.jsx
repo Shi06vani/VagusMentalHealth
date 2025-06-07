@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import TherapistCard from "../../common/ui/TherapistCard";
 import specialist from "../../../assets/images/specilaist.png";
 import Pagination from "../../common/ui/Pagination ";
+import ScrollFadeUp from "../../animations/ScrollFadeUp";
 // therapistData.js
 const therapists = [
   {
@@ -71,6 +72,7 @@ const ChooseYourSecialist = () => {
     console.log("Page:", page); 
   };
   return (
+  
     <div className=" lg:mx-14 xl:mx-24   ">
       <div>
         <h1 className="text-[#3E3E3E] font-poppins font-normal text-2xl mb-[10px]  sm:text-3xl lg:text-[32px]  xl:text-4xl ">

@@ -48,43 +48,55 @@ const Autistic = () => {
     },
   ];
 
+   const sections = [
+    <div className="mt-5" key="banner">
+      <CommonBanner
+        title="Best Treatment for Autism"
+        description="Autism Spectrum Disorder (ASD) is a neurodevelopmental condition that affects communication, social...  read more"
+        image={autistic}
+        linkText="Take Test"
+        linkHref="/take-test"
+      />
+      <div className="flex justify-center sm:justify-end items-center my-7 sm:my-11 px-4">
+        <FreeConsultationButton onClick={handleClick} />
+      </div>
+    </div>,
+
+    <div key="issue-list">
+      <IssueList issues={issuesData} />
+    </div>,
+
+    <div className="container mx-auto my-10 xl:my-32" key="therapy-overview">
+      <AutisticTherapy />
+    </div>,
+
+    <div className="container mx-auto" key="faq">
+      <div className="sm:mx-20">
+        <FAQAccordion data={autismFAQs} icon={commonImages.downArrow} />
+      </div>
+    </div>,
+
+    <div key="help-banner">
+      <HelpBanner
+        title="Need Help Choosing?"
+        description="Connect with our team and they’ll guide you to the right therapist and support your journey."
+        buttonText="Chat on Whatsapp"
+        buttonIcon={commonImages.arrow_right}
+        backgroundImage={commonImages.needhelp}
+        onButtonClick={() => {
+          window.open("https://wa.me/your-number", "_blank");
+        }}
+      />
+    </div>,
+  ];
+
   return (
-    <div>
-      <div className=" mt-5">
-        <CommonBanner
-          title="Best Treatment for Autism"
-          description="Autism Spectrum Disorder (ASD) is a neurodevelopmental condition that affects communication, social...  read more"
-          image={autistic}
-          linkText="Take Test"
-          linkHref="/take-test"
-        />
-        <div className="flex justify-center sm:justify-end items-center my-7 sm:my-11 px-4">
-          <FreeConsultationButton onClick={handleClick} />
-        </div>
-      </div>
-      <div>
-        <IssueList issues={issuesData} />
-      </div>
-      <div className="container mx-auto my-10 xl:my-32">
-        <AutisticTherapy />
-      </div>
-      <div className="container mx-auto">
-        <div className="sm:mx-20">
-          <FAQAccordion data={autismFAQs} icon={commonImages.downArrow} />
-        </div>
-      </div>
-      <div>
-        <HelpBanner
-          title="Need Help Choosing?"
-          description="Connect with our team and they’ll guide you to the right therapist and support your journey."
-          buttonText="Chat on Whatsapp"
-          buttonIcon={commonImages.arrow_right}
-          backgroundImage={commonImages.needhelp}
-          onButtonClick={() => {
-            window.open("https://wa.me/your-number", "_blank");
-          }}
-        />
-      </div>
+     <div>
+      {sections.map((Component, index) => (
+        <ScrollFadeUp key={index} delay={index * 0.1}>
+          {Component}
+        </ScrollFadeUp>
+      ))}
     </div>
   );
 };

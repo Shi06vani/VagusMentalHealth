@@ -88,9 +88,10 @@ const ChronicIllness = () => {
           buttonText="Chat on Whatsapp"
           buttonIcon={commonImages.arrow_right}
           backgroundImage={commonImages.needhelp}
-          onButtonClick={() => {
-            window.open("https://wa.me/your-number", "_blank");
-          }}
+         onButtonClick={() => {
+  window.open("https://wa.me/91954857638", "_blank");
+}}
+
         />
       </div>
     </div>

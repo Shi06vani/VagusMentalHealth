@@ -12,6 +12,7 @@ import HelpBanner from "../../components/common/ui/HelpBanner";
 import arrow_right from "../../assets/icons/arrow-right-Bold.svg";
 import needhelp from "../../assets/images/need help.jpg";
 import TraumaTherpayOverview from "../../components/sections/lifeandwork/TraumaTherpayOverview";
+import ScrollFadeUp from "../../components/animations/ScrollFadeUp";
 const Trauma = () => {
   const handleClick = () => {};
 
@@ -49,44 +50,57 @@ const Trauma = () => {
   ];
 
   return (
-    <div>
-      <div className=" mt-5">
-        <CommonBanner
-          title="Trauma"
-          description="Trauma is a deeply distressing experience the...  read more"
-          image={taruma}
-          linkText="Take Test"
-          linkHref="/take-test"
-        />
-        <div className="flex justify-center sm:justify-end items-center my-7 sm:my-11 px-4">
-          <FreeConsultationButton onClick={handleClick} />
-        </div>
-      </div>
-      <div>
-        <IssueList issues={issuesData} />
-      </div>
-
-      <div className="container mx-auto my-10 xl:my-32">
-        <TraumaTherpayOverview />
-      </div>
-      <div className="container mx-auto">
-        <div className="sm:mx-20">
-          <FAQAccordion data={traumaFAQs} icon={downArrow} />
-        </div>
-      </div>
-      <div>
-        <HelpBanner
-          title="Need Help Choosing?"
-          description="Connect with our team and they’ll guide you to the right therapist and support your journey."
-          buttonText="Chat on Whatsapp"
-          buttonIcon={arrow_right}
-          backgroundImage={needhelp}
-          onButtonClick={() => {
-            window.open("https://wa.me/your-number", "_blank");
-          }}
-        />
+   <div>
+  <ScrollFadeUp>
+    <div className="mt-5">
+      <CommonBanner
+        title="Trauma"
+        description="Trauma is a deeply distressing experience the...  read more"
+        image={taruma}
+        linkText="Take Test"
+        linkHref="/take-test"
+      />
+      <div className="flex justify-center sm:justify-end items-center my-7 sm:my-11 px-4">
+        <FreeConsultationButton onClick={handleClick} />
       </div>
     </div>
+  </ScrollFadeUp>
+
+  <ScrollFadeUp>
+    <div>
+      <IssueList issues={issuesData} />
+    </div>
+  </ScrollFadeUp>
+
+  <ScrollFadeUp>
+    <div className="container mx-auto my-10 xl:my-32">
+      <TraumaTherpayOverview />
+    </div>
+  </ScrollFadeUp>
+
+  <ScrollFadeUp>
+    <div className="container mx-auto">
+      <div className="sm:mx-20">
+        <FAQAccordion data={traumaFAQs} icon={downArrow} />
+      </div>
+    </div>
+  </ScrollFadeUp>
+
+  <ScrollFadeUp>
+    <div>
+      <HelpBanner
+        title="Need Help Choosing?"
+        description="Connect with our team and they’ll guide you to the right therapist and support your journey."
+        buttonText="Chat on Whatsapp"
+        buttonIcon={arrow_right}
+        backgroundImage={needhelp}
+        onButtonClick={() => {
+          window.open("https://wa.me/91954857638", "_blank");
+        }}
+      />
+    </div>
+  </ScrollFadeUp>
+</div>
   );
 };
 

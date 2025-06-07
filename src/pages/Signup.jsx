@@ -426,7 +426,7 @@ const Signup = () => {
       <>
         <label
           className={cn(
-            "block text-base sm:text-lg font-medium text-[#3E3E3E]",
+            "block text-base sm:text-[17px] font-medium text-[#3E3E3E]",
             className
           )}
         >
@@ -547,16 +547,16 @@ const Signup = () => {
   };
 
   return (
-    <div className="container mx-auto my-10">
-      <div className=" flex items-center font-poppins justify-center  px-4">
-        <div className="w-full max-w-3xl bg-white p-5 sm:p-20 lg:p-24 rounded-md shadow-md">
-          <div className="flex justify-center items-center mb-10 sm:mb-6">
-            <img src={logo} alt="" />
-          </div>
-          <form onSubmit={handleSubmit}>
-            <div className="space-y-5">
+    <div className="container mx-auto  ">
+      <div className=" my-14  w-full">
+        <div className="flex justify-center items-center mb-10 sm:mb-10 ">
+          <img src={logo} alt="loho" />
+        </div>
+        <form onSubmit={handleSubmit}>
+          <div className="space-y-5 ">
+            <div className="flex-col sm:flex-row gap-5 space-y-5 sm:gap-3">
               {/* Name */}
-              <div>
+              <div className="w-full">
                 <RenderLabel text="Name" />
 
                 <input
@@ -573,7 +573,7 @@ const Signup = () => {
               </div>
 
               {/* Email */}
-              <div>
+              <div className="w-full">
                 <RenderLabel text="Email" />
 
                 <input
@@ -590,9 +590,11 @@ const Signup = () => {
                   </p>
                 )}
               </div>
+            </div>
 
+            <div className="flex-col sm:flex-row gap-5 space-y-5 sm:gap-3">
               {/* Password */}
-              <div>
+              <div className="w-full">
                 <RenderLabel text="Password" />
 
                 <input
@@ -612,7 +614,7 @@ const Signup = () => {
               </div>
 
               {/* Country */}
-              <div>
+              <div className="w-full">
                 <RenderLabel text="Country" />
                 <input
                   type="text"
@@ -628,9 +630,11 @@ const Signup = () => {
                   </p>
                 )}
               </div>
+            </div>
 
+            <div className="flex-col sm:flex-row gap-5 space-y-5 sm:gap-3">
               {/* State */}
-              <div>
+              <div className="w-full">
                 <RenderLabel text="State" />
                 <input
                   name="state"
@@ -648,7 +652,7 @@ const Signup = () => {
               </div>
 
               {/* Age */}
-              <div>
+              <div className="w-full">
                 <RenderLabel text="Age" />
                 <input
                   name="age"
@@ -662,9 +666,11 @@ const Signup = () => {
                   <p className="text-red-600 text-sm mt-1">{formErrors.age}</p>
                 )}
               </div>
+            </div>
 
+            <div className="flex-col sm:flex-row gap-5 space-y-5 sm:gap-3">
               {/* Gender */}
-              <div>
+              <div className="w-full">
                 <RenderLabel text="Gender" />
                 <select
                   className="mt-1.5 w-full px-4 py-2.5 text-sm sm:text-base border border-[#8C8C8C] rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -686,80 +692,76 @@ const Signup = () => {
                   </p>
                 )}
               </div>
-
-              {/* Service Looking For */}
-              <div>
-                <RenderLabel text="Service Looking For" />
-                <RadioGroupField
-                  name="serviceLookingFor"
-                  options={serviceOptions}
-                  value={formData.serviceLookingFor}
-                  onChange={handleRadioChange}
-                />
-                {formErrors.serviceLookingFor && (
-                  <p className="text-red-600 text-sm mt-1">
-                    {formErrors.serviceLookingFor}
-                  </p>
-                )}
-              </div>
-
-              {/* Taken Therapy Before */}
-              <div>
-                <RenderLabel text="Taken Therapy Before" />
-                <RadioGroupField
-                  label="Have you taken therapy before?"
-                  name="takenTherapyBefore"
-                  value={
-                    formData.takenTherapyBefore
-                      ? formData.takenTherapyBefore.toString()
-                      : ""
-                  }
-                  onChange={handleChange}
-                  options={[
-                    { label: "Yes", value: "true" },
-                    { label: "No", value: "false" },
-                  ]}
-                />
-                {formErrors.takenTherapyBefore && (
-                  <p className="text-red-600 text-sm mt-1">
-                    {formErrors.takenTherapyBefore}
-                  </p>
-                )}
-              </div>
             </div>
 
-            <button
-              type="submit"
-              className="w-full my-8 bg-[#094C9F] text-white py-2 rounded-xl hover:bg-blue-800 transition"
-            >
-              Signup
-            </button>
-          </form>
+            {/* Service Looking For */}
+            <div>
+              <RenderLabel text="Service Looking For" className="mb-2" />
+              <RadioGroupField
+                name="serviceLookingFor"
+                options={serviceOptions}
+                value={formData.serviceLookingFor}
+                onChange={handleRadioChange}
+              />
+              {formErrors.serviceLookingFor && (
+                <p className="text-red-600 text-sm mt-1">
+                  {formErrors.serviceLookingFor}
+                </p>
+              )}
+            </div>
 
-          <div className="flex items-center my-8">
-            <hr className="flex-grow border-gray-300" />
-            <span className="mx-2 text-sm text-gray-500">or</span>
-            <hr className="flex-grow border-gray-300" />
+            {/* Taken Therapy Before */}
+            <div className="w-full">
+              <RenderLabel text="Taken Therapy Before" className="mb-2" />
+              <RadioGroupField
+                label="Have you taken therapy before?"
+                name="takenTherapyBefore"
+                value={
+                  formData.takenTherapyBefore
+                    ? formData.takenTherapyBefore.toString()
+                    : ""
+                }
+                onChange={handleChange}
+                options={[
+                  { label: "Yes", value: "true" },
+                  { label: "No", value: "false" },
+                ]}
+              />
+              {formErrors.takenTherapyBefore && (
+                <p className="text-red-600 text-sm mt-1">
+                  {formErrors.takenTherapyBefore}
+                </p>
+              )}
+            </div>
           </div>
 
-          <div className="text-center mb-4">
-            <a href="#" className="text-[#094C9F] text-base font-semibold">
-              Signup with Email
-            </a>
-          </div>
+          <button
+            type="submit"
+            className="w-full my-8 bg-[#094C9F] text-white py-2 rounded-xl hover:bg-blue-800 transition"
+          >
+            Signup
+          </button>
+        </form>
 
-          <div className="text-center mb-4">
-            <span className="text-sm font-light text-[#000000]">
-              Already have an account ?{" "}
-            </span>
-            <a
-              href="/login"
-              className="text-[#094C9F] text-base font-semibold "
-            >
-              Login
-            </a>
-          </div>
+        <div className="flex items-center my-8">
+          <hr className="flex-grow border-gray-300" />
+          <span className="mx-2 text-sm text-gray-500">or</span>
+          <hr className="flex-grow border-gray-300" />
+        </div>
 
+        <div className="text-center mb-4">
+          <a href="#" className="text-[#094C9F] text-base font-semibold">
+            Signup with Email
+          </a>
+        </div>
+
+        <div className="text-center mb-4">
+          <span className="text-sm font-light text-[#000000]">
+            Already have an account ?{" "}
+          </span>
+          <a href="" className="text-[#094C9F] text-base font-semibold ">
+            Login
+          </a>
         </div>
       </div>
     </div>

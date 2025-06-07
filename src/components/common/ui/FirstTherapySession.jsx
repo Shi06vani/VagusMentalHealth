@@ -1,8 +1,10 @@
 import React from 'react';
+import ScrollFadeUp from '../../animations/ScrollFadeUp';
 
 const FirstTherapySession = ({ heading, subheading, steps = [] }) => {
   return (
-    <div className="font-[Poppins] space-y-6">
+    <ScrollFadeUp>
+         <div className="font-[Poppins] space-y-6">
       {/* Heading */}
       {heading && (
         <h2 className="text-[#094C9F] text-lg lg:text-xl font-semibold">
@@ -31,6 +33,8 @@ const FirstTherapySession = ({ heading, subheading, steps = [] }) => {
         </div>
       )}
     </div>
+    </ScrollFadeUp>
+ 
   );
 };
 

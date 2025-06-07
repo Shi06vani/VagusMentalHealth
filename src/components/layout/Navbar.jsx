@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { use, useState } from "react";
 import { Link } from "react-router-dom";
 import { ChevronDown, Menu, X } from "lucide-react";
 import logo from "../../assets/logo/logo.svg";
@@ -6,9 +6,12 @@ import { navItems } from "../../data/navIteams";
 import menu from "../../assets/icons/menu.svg";
 import arrow from "../../assets/icons/right-half-arroe.svg";
 import { useEffect } from "react";
-const Navbar = () => {
+import { is } from "date-fns/locale";
+const Navbar = ({ openLogin, openSignup }) => {
   const [openDropdown, setOpenDropdown] = useState(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const [isLogin, setIsLogin] = useState(false);
 
   useEffect(() => {
     if (isMobileMenuOpen) {
@@ -23,9 +26,16 @@ const Navbar = () => {
     };
   }, [isMobileMenuOpen]);
 
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      setIsLogin(true);
+    }
+  }, []);
+
   return (
     <div className="container mx-auto">
-      <nav className=" font-poppins xl:px-6 py-5  mt-9">
+      <nav className=" font-poppins xl:px-6 py-9   ">
         <div className="flex justify-between items-center">
           {/* Logo */}
           <div className="font-bold text-xl">
@@ -36,14 +46,20 @@ const Navbar = () => {
 
           {/* Hamburger Menu (Mobile) */}
           <div className="lg:hidden  flex gap-4">
-            <div className="">
-              <Link
-                to="/login"
-                className="text-[#3E3E3E] font-poppins text-base font-medium"
-              >
-                Login
-              </Link>
-            </div>
+            {isLogin ? (
+              <div className="" onClick={openSignup}>
+                <Link className="text-[#3E3E3E] font-poppins text-base font-medium">
+                  Signup
+                </Link>
+              </div>
+            ) : (
+              <div className="" onClick={openLogin}>
+                <Link className="text-[#3E3E3E] font-poppins text-base font-medium">
+                  Login
+                </Link>
+              </div>
+            )}
+
             <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
               {isMobileMenuOpen ? (
                 <X size={24} />
@@ -68,12 +84,10 @@ const Navbar = () => {
                     <ChevronDown size={14} />
                   </button>
                   {openDropdown === idx && (
-                    <ul 
-                    className="absolute left-0 top-full mt-3 pt-4 pb-4 max-h-60 overflow-y-auto shadow-lg bg-white rounded-[30px] border border-gray-200 z-10 min-w-[270px] custom-scrollbar transition-all duration-200 ease-in-out"
-          
-                    
-                    // className="absolute left-0 top-full mt-3 pt-4 pb-9  h-52 overflow-y-scroll shadow-sm bg-[#FEFEFE] rounded-[30px] border z-10 min-w-[270px] overflow-hidden"
-                    
+                    <ul
+                      className="absolute left-0 top-full mt-3 pt-4 pb-4 max-h-60 overflow-y-auto shadow-lg bg-white rounded-[30px] border border-gray-200 z-10 min-w-[270px] custom-scrollbar transition-all duration-200 ease-in-out"
+
+                      // className="absolute left-0 top-full mt-3 pt-4 pb-9  h-52 overflow-y-scroll shadow-sm bg-[#FEFEFE] rounded-[30px] border z-10 min-w-[270px] overflow-hidden"
                     >
                       {item.submenu.map((sub, subIdx) => (
                         <li key={subIdx}>
@@ -102,14 +116,25 @@ const Navbar = () => {
               )
             )}
           </ul>
-          <li className="hidden lg:flex">
-            <Link
-              to="/login"
-              className="text-sm  xl:text-[15px] font-normal text-[#3E3E3E]  list-none"
-            >
-              Login
-            </Link>
-          </li>
+          {isLogin ? (
+            <li className="hidden lg:flex" onClick={openSignup}>
+              <Link
+                // to=""
+                className="text-sm  xl:text-[15px] font-normal text-[#3E3E3E]  list-none"
+              >
+                Signup
+              </Link>
+            </li>
+          ) : (
+            <li className="hidden lg:flex" onClick={openLogin}>
+              <Link
+                // to=""
+                className="text-sm  xl:text-[15px] font-normal text-[#3E3E3E]  list-none"
+              >
+                Login
+              </Link>
+            </li>
+          )}
         </div>
 
         {/* Mobile Menu */}
@@ -118,7 +143,7 @@ const Navbar = () => {
           <>
             {/* Black Overlay */}
             <div
-              className="fixed inset-0 bg-black bg-opacity-40 z-40"
+              className="fixed inset-0 bg-black bg-opacity-40 z-40 "
               onClick={() => {
                 setIsMobileMenuOpen(false);
                 setOpenDropdown(null);
@@ -127,7 +152,7 @@ const Navbar = () => {
 
             {/* Slide-in Menu */}
             <ul
-              className="fixed top-0 left-0 h-full w-[75%] sm:w-[50%] bg-white z-50 rounded-r-[30px] px-4 py-7 space-y-4 transform transition-transform duration-300 ease-in-out"
+              className="fixed top-0 left-0 h-full w-[75%] sm:w-[50%] bg-white z-50 rounded-r-[30px] px-4 py-7 space-y-4 transform transition-transform duration-300 ease-in-out overflow-y-scroll"
               style={{ transform: "translateX(0)" }}
             >
               <div className="font-bold text-xl pb-4">
@@ -150,7 +175,7 @@ const Navbar = () => {
                         <ChevronDown size={14} />
                       </button>
                       {openDropdown === idx && (
-                        <ul className="pt-4 pb-6 px-4 bg-[#FEFEFE] shadow-md rounded-[30px] border mt-3 space-y-1">
+                        <ul className="pt-4 pb-6 px-4 bg-[#FEFEFE] shadow- rounded-[30px] border mt-3 space-y-5 overflow-y-scroll">
                           {item.submenu.map((sub, subIdx) => (
                             <li key={subIdx}>
                               <Link
@@ -180,15 +205,28 @@ const Navbar = () => {
                   )}
                 </li>
               ))}
-              <li>
-                <Link
-                  to="/login"
-                  className="text-sm font-normal text-gray-700"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Login
-                </Link>
-              </li>
+
+              {isLogin ? (
+                <li onClick={openSignup}>
+                  <Link
+                    to=""
+                    className="text-sm font-normal text-gray-700"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    SignUp
+                  </Link>
+                </li>
+              ) : (
+                <li onClick={openLogin}>
+                  <Link
+                    to=""
+                    className="text-sm font-normal text-gray-700"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Login
+                  </Link>
+                </li>
+              )}
             </ul>
           </>
         )}

@@ -8,6 +8,7 @@ import headphone from "../../assets/icons/headphones-icon.svg";
 import lock from "../../assets/icons/lock-icon.svg";
 import credit from "../../assets/icons/credit-card-check-icon.svg";
 import check from "../../assets/icons/check-icon.svg";
+import { Link } from "react-router-dom";
 
 const contactInfo = [
   {
@@ -48,7 +49,8 @@ const Footer = () => {
       <div className="container mx-auto">
         <div className=" flex flex-col justify-center xl:justify-between items-center sm:pb-5 sm:items-start sm:flex-row sm:justify-between">
           <div>
-            <img src={foot_logo} alt="" className="w-16 sm:w-14 xl:w-16" />
+            <Link to={"/"}>            <img src={foot_logo} alt="" className="w-16 sm:w-14 xl:w-16" />
+</Link>
           </div>
 
           <div className="hidden sm:block">
@@ -56,13 +58,24 @@ const Footer = () => {
               <li className="text-[#3E3E3ECC] font-semibold text-base pb-3">
                 Resources
               </li>
-              <li>Plans</li>
-              <li>Therpaist</li>
-              <li>Business</li>
-              <li>The Advice Room</li>
-              <li>Contact Us</li>
+              <li>
+                <Link to={"/"}> Home</Link>
+              </li>
+
+              <li>
+                <Link to={"/Pricing"}>Pricing</Link>{" "}
+              </li>
+              <li>
+                <Link to={"/Therpaist"}>Therpaist</Link>
+              </li>
+              <li>
+                <Link to={"/Business"}>Business</Link>
+              </li>
+              <li>
+                <Link to={"/advice-room"}>The Advice Room</Link>
+              </li>
             </ul>
-          </div >
+          </div>
           <div className="hidden sm:block">
             <ul className="space-y-2 text-[#667085] font-medium text-sm">
               <li className="text-[#3E3E3ECC] font-semibold text-base pb-3">
@@ -73,13 +86,30 @@ const Footer = () => {
               <li></li>
             </ul>
           </div>
-          <div >
+          <div>
             <ul className=" pt-5 sm:pt-0 sm:space-y-2 mb-7 sm:mb-0 text-lg font-normal text-[#3E3E3E] sm:text-[#667085] text-center sm:text-start sm:font-medium sm:text-sm">
               <li className="text-[#3E3E3ECC] font-semibold text-base pb-3 hidden sm:flex">
                 Contact
               </li>
-              <li>+91 954857638</li>
-              <li>info@vagusmindhealth@gmail.com</li>
+              <li>
+                <a
+                  href="https://wa.me/91954857638"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:underline"
+                >
+                  +91 954857638
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=info@vagusmindhealth@gmail.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  info@vagusmindhealth@gmail.com
+                </a>
+              </li>{" "}
             </ul>
           </div>
         </div>
@@ -95,11 +125,21 @@ const Footer = () => {
         </div>
 
         <div className="flex flex-col sm:flex-row items-center sm:justify-between  border-t-4 sm:border-t-2 bordert-t-[#E4E7EC] pt-5 pb-9">
-          <div className="flex gap-2">
-            <img src={linkdean} alt="" className="w-5  sm:w-6" />
-            <img src={Instagram} alt="" className="w-5  sm:w-6" />
-            <img src={Twitter} alt="" className="w-5  sm:w-6" />
-            <img src={facebook} alt="" className="w-5  sm:w-6" />
+          <div className="flex gap-4">
+            <button>
+              <img src={linkdean} alt="" className="w-5  sm:w-6" />
+            </button>
+            <button>
+              <img src={Instagram} alt="" className="w-5  sm:w-6" />
+            </button>
+
+            <button>
+              <img src={Twitter} alt="" className="w-5  sm:w-6" />
+            </button>
+
+            <button>
+              <img src={facebook} alt="" className="w-5  sm:w-6" />
+            </button>
           </div>
           <div>
             <p className="text-[#3E3E3ECC] font-base font-normal">

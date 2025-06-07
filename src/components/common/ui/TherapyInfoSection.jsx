@@ -1,4 +1,5 @@
 import React from "react";
+import ScrollFadeUp from "../../animations/ScrollFadeUp";
 
 const TherapyInfoSection = ({
   introParagraphs = [],
@@ -7,7 +8,8 @@ const TherapyInfoSection = ({
   features = [],
 }) => {
   return (
-    <div className="space-y-6">
+    <ScrollFadeUp>
+       <div className="space-y-6">
       {/* Intro Paragraphs */}
       <div className="space-y-2.5">
         {introParagraphs.map((para, index) => (
@@ -48,6 +50,8 @@ const TherapyInfoSection = ({
         </div>
       )}
     </div>
+    </ScrollFadeUp>
+   
   );
 };
 

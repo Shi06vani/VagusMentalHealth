@@ -67,7 +67,7 @@ const ImpactSection = () => {
 
 const WhyChooseUs = () => {
   return (
-    <div className="bg-[#E9F3FF]  my-20 sm:my-28 rounded-b-[55px]  rounded-t-[55px]  xl:rounded-b-[200px] xl:rounded-t-[200px]">
+    <div className="bg-[#E9F3FF]  my-20 sm:my-24 rounded-b-[55px]  rounded-t-[55px]  xl:rounded-b-[200px] xl:rounded-t-[200px]">
       <div className="container mx-auto">
         <AOSFade delay={1000}>
           <div className="text-center font-poppins py-[70px]">

@@ -71,7 +71,7 @@ export const navItems = [
     ],
   },
   { label: "Therapist", path: "/therapist" },
-  { label: "Plans", path: "/plans" },
+  { label: "Plans", path: "/pricing" },
   { label: "Business", path: "/business" },
   { label: "The Advice Room", path: "/advice-room" },
 ];

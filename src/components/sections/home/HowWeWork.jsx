@@ -6,7 +6,7 @@ import AOSFade from "../../animations/AOSFade";
 
 const HowWeWork = () => {
   return (
-    <div className="container mx-auto my-20 sm:my-20 font-poppins">
+    <div className="container mx-auto my-20 sm:my-24 font-poppins">
       <AOSFade>
         <div className="flex flex-col justify-center items-center">
           <h1 className="text-[#101828]  text-2xl  sm:text-3xl lg:text-[32px]  xl:text-4xl  pb-5">

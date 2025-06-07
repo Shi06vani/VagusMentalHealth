@@ -5,18 +5,14 @@ import AdviceBanner from "../components/sections/advice-room/AdviceBanner";
 import HelpBanner from "../components/common/ui/HelpBanner";
 import arrow_right from "../assets/icons/arrow-right-Bold.svg";
 import needhelp from "../assets/images/need help.jpg";
+import ScrollFadeUp from "../components/animations/ScrollFadeUp";
 
 const AdviceRoom = () => {
-  return (
-    <div>
-      <div>
-        <AdviceBanner />
-      </div>
-      <div>
-        <AdviceCard />
-      </div>
-      <div>
-         <HelpBanner
+
+    const sections = [
+    <AdviceBanner />,
+    <AdviceCard />,
+    <HelpBanner
       title="Need Help Choosing?"
       description="Connect with our team and they’ll guide you to the right therapist and support your journey."
       buttonText="Chat on Whatsapp"
@@ -25,8 +21,16 @@ const AdviceRoom = () => {
       onButtonClick={() => {
         window.open("https://wa.me/your-number", "_blank");
       }}
-    />
-      </div>
+    />,
+  ];
+
+  return (
+    <div>
+      {sections.map((Component, index) => (
+        <ScrollFadeUp key={index} delay={index * 0.1}>
+          {Component}
+        </ScrollFadeUp>
+      ))}
     </div>
   );
 };

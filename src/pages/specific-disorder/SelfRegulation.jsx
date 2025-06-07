@@ -10,6 +10,7 @@ import icon1 from "../../assets/icons/sad.svg";
 import icon2 from "../../assets/icons/mood.svg";
 import icon3 from "../../assets/icons/sleep-disorde.svg";
 import SelfRegulationTherapy from '../../components/sections/specific-disorder/SelfRegulationTherapy';
+import ScrollFadeUp from '../../components/animations/ScrollFadeUp';
 
 
 const issuesData = [
@@ -48,42 +49,56 @@ const SelfRegulation = () => {
 
   return (
     <div>
-      <div className=" mt-5">
-        <CommonBanner
-          title="Best Treatment for Emotional Self-Regulation"
-          description="Emotional self-regulation is the ability to manage and respond to emotional experiences in a healthy way. It helps individuals...  read more"
-          image={self}
-          linkText="Take Test"
-          linkHref="/take-test"
-        />
-        <div className="flex justify-center sm:justify-end items-center my-7 sm:my-11 px-4">
-          <FreeConsultationButton onClick={handleClick} />
-        </div>
-      </div>
-      <div>
-        <IssueList issues={issuesData} />
-      </div>
-      <div className="container mx  -auto my-10 xl:my-32">
-        <SelfRegulationTherapy />
-      </div>
-      <div className="container mx-auto">
-        <div className="sm:mx-20">
-          <FAQAccordion data={emotionalRegulationFAQs} icon={commonImages.downArrow} />
-        </div>
-      </div>
-      <div>
-        <HelpBanner
-          title="Need Help Choosing?"
-          description="Connect with our team and they’ll guide you to the right therapist and support your journey."
-          buttonText="Chat on Whatsapp"
-          buttonIcon={commonImages.arrow_right}
-          backgroundImage={commonImages.needhelp}
-          onButtonClick={() => {
-            window.open("https://wa.me/your-number", "_blank");
-          }}
-        />
+  <ScrollFadeUp>
+    <div className="mt-5">
+      <CommonBanner
+        title="Best Treatment for Emotional Self-Regulation"
+        description="Emotional self-regulation is the ability to manage and respond to emotional experiences in a healthy way. It helps individuals...  read more"
+        image={self}
+        linkText="Take Test"
+        linkHref="/take-test"
+      />
+      <div className="flex justify-center sm:justify-end items-center my-7 sm:my-11 px-4">
+        <FreeConsultationButton onClick={handleClick} />
       </div>
     </div>
+  </ScrollFadeUp>
+
+    <div>
+  <ScrollFadeUp>
+      <IssueList issues={issuesData} />
+  </ScrollFadeUp>
+    </div>
+
+  <ScrollFadeUp>
+    <div className="container mx-auto my-10 xl:my-32">
+      <SelfRegulationTherapy />
+    </div>
+  </ScrollFadeUp>
+
+  <ScrollFadeUp>
+    <div className="container mx-auto">
+      <div className="sm:mx-20">
+        <FAQAccordion data={emotionalRegulationFAQs} icon={commonImages.downArrow} />
+      </div>
+    </div>
+  </ScrollFadeUp>
+
+  <ScrollFadeUp>
+    <div>
+      <HelpBanner
+        title="Need Help Choosing?"
+        description="Connect with our team and they’ll guide you to the right therapist and support your journey."
+        buttonText="Chat on Whatsapp"
+        buttonIcon={commonImages.arrow_right}
+        backgroundImage={commonImages.needhelp}
+        onButtonClick={() => {
+          window.open("https://wa.me/your-number", "_blank");
+        }}
+      />
+    </div>
+  </ScrollFadeUp>
+</div>
   )
 }
 
