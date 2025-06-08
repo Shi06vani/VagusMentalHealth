@@ -4,7 +4,7 @@ import therpry2 from "../../../assets/images/therpey2.png";
 import therpry3 from "../../../assets/images/therpey3.png";
 import therpry4 from "../../../assets/images/therpey4.png";
 import therpry5 from "../../../assets/images/therpey5.png";
-import video from "../../../assets/icons/video.svg";
+// import video from "../../../assets/icons/video.svg";
 import rightClick from "../../../assets/icons/charm_circle-tick.svg";
 import AOSFade from "../../animations/AOSFade";
 import FreeConsultationButton from "../../common/ui/FreeConsultationButton";
