@@ -1,6 +1,5 @@
 import React from "react";
 import Button from "./Button";
-import ScrollFadeUp from "../../animations/ScrollFadeUp";
 
 const BlogCard = ({
   image,
@@ -11,7 +10,7 @@ const BlogCard = ({
   buttonLink,
 }) => {
   return (
-    <ScrollFadeUp>
+   
     <div className="rounded-xl font-poppins overflow-hidden shadow-lg bg-white shadow-[#00000026]  flex flex-col h-full">
       <div className="relative">
         <img src={image} alt={title} className="w-full lg:h-60 object-cover" />
@@ -39,7 +38,7 @@ const BlogCard = ({
         </div>
       </div>
     </div>
-    </ScrollFadeUp>
+    
   );
 };
 

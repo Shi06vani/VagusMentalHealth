@@ -46,16 +46,17 @@ const CustomInput = ({
       <label className="block text-xs font-medium text-[#667085]  mb-2">
         {label}
       </label>
-      <div className="flex gap-0.4 ">
+      <div className="flex gap-0.4  h-full">
         {hasCountryCode && (
-          <span className=" items-center w-28 border border-r-0 border-gray-300 rounded-l-md bg-gray-50 text-gray-700 text-sm">
+          <span className=" items-center object-contain    w-44 sm:w-28 border border-r-0 border-gray-300 rounded-l-md bg-gray-50 text-gray-700 text-sm">
             <PhoneInput
               country={"us"}
               value={phone}
               onChange={setPhone}
               inputStyle={{
                 width: "100%",
-                height: "50px",
+                height:"50px",
+                
                 
               }}
               dropdownStyle={{ zIndex: 1000 }} // to make sure dropdown overlays
