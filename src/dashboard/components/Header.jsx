@@ -3,7 +3,7 @@ import bell from "../assets/icons/bell.svg"
 import info from "../assets/icons/info-circle.svg"
 import user from "../assets/icons/user.svg"
 import { Menu } from "lucide-react";
-
+ 
 const Header = ({ onMenuClick }) => {
   return (
     <div className="flex  justify-between font-poppins  px-6  rounded-lg ">
