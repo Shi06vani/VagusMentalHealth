@@ -33,13 +33,13 @@ const SearchInput = ({
   ...props
 }) => {
   return (
-    <div className={cn("mx-10 sm:mx-0", containerClassName)}>
+    <div className={cn("mx-8 sm:mx-0", containerClassName)}>
       <div className="relative font-poppins w-full sm:max-w-md mx-auto">
         <input
           type="text"
           placeholder={placeholder}
           className={cn(
-            "w-full sm:py-2.5 pl-10 sm:pr-4 text-sm rounded-full bg-white/40 backdrop-blur-md text-white placeholder-white/70 border border-white/30 outline-none focus:ring-2 focus:ring-white transition",
+            "w-full py-1.5 px-1.5 sm:py-2.5 pl-10 sm:pr-4 text-sm rounded-full bg-white/40 backdrop-blur-md text-white placeholder-white/70 border border-white/30 outline-none focus:ring-2 focus:ring-white transition",
             inputClassName
           )}
           {...props}

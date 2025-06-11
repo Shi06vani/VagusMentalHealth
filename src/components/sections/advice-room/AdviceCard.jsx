@@ -10,6 +10,7 @@ import card6 from "../../../assets/images/cardimag6.jpg"
 import card7 from "../../../assets/images/cardimag7.png"
 import card8 from "../../../assets/images/cardimag8.png"
 import card9 from "../../../assets/images/cardimag9.jpg"
+import ScrollFadeUp from "../../animations/ScrollFadeUp";
 
 
 
@@ -103,9 +104,10 @@ const blogCardsData = [
 
 const AdviceCard = () => {
   return (
-    <div className="container mx-auto my-24 ">
-      <div className="grid gap-5 sm:gap-8 md:grid-cols-2 xl:grid-cols-3 lg:px-20  xl:px-10">
-        {blogCardsData.map((card, index) => (
+    <div className="container mx-auto my-16 sm:my-24 ">
+      <div className="grid gap-5 sm:gap-8 md:grid-cols-2 xl:grid-cols-3 px-3 lg:px-20  xl:px-10">
+        {blogCardsData?.map((card, index) => (
+          <ScrollFadeUp>
           <BlogCard
             key={index}
             image={card.image}
@@ -115,6 +117,7 @@ const AdviceCard = () => {
             buttonText={card.buttonText}
             buttonLink={card.buttonLink}
           />
+          </ScrollFadeUp>
         ))}
       </div>
     </div>
